@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <title>HMW Beyond Borders – Bringing The Unseen to Light</title>
   <meta name="description" content="Trusted source for breaking news, in-depth analysis, and exclusive stories from around the globe with focus on African narratives.">
   
@@ -25,6 +25,16 @@
   <meta name="twitter:title" content="HMW Beyond Borders">
   <meta name="twitter:description" content="Bringing unseen stories to light with integrity and innovation">
   
+  <!-- iOS PWA Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="HMW News">
+  <link rel="apple-touch-startup-image" href="/splash.png">
+  
+  <!-- PWA Theme Color -->
+  <meta name="theme-color" content="#004D99">
+  <meta name="msapplication-TileColor" content="#004D99">
+  
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -39,7 +49,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Animate.css for smooth animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
@@ -71,6 +84,16 @@
     </div>
   </div>
   
+  <!-- ===== MOBILE SEARCH BAR ===== -->
+  <div class="mobile-search">
+    <div class="mobile-search-container">
+      <input type="search" placeholder="Search stories, topics..." class="mobile-search-input" aria-label="Search">
+      <button class="mobile-search-close" aria-label="Close search">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+  
   <!-- ===== TOP UTILITY BAR ===== -->
   <div class="top-utility-bar">
     <div class="container">
@@ -95,13 +118,13 @@
           <div class="trending-topics">
             <span class="trending-label"><i class="fas fa-fire"></i> TRENDING:</span>
             <div class="topics-scroller">
-              <a href="#" class="topic-tag">#AfricaTech2025</a>
-              <a href="#" class="topic-tag">#ClimateAction</a>
-              <a href="#" class="topic-tag">#AIHealthcare</a>
-              <a href="#" class="topic-tag">#DigitalCurrency</a>
-              <a href="#" class="topic-tag">#GreenEnergy</a>
-              <a href="#" class="topic-tag">#StartupAfrica</a>
-              <a href="#" class="topic-tag">#WomenInTech</a>
+              <a href="#" class="topic-tag">#CulturalHeritage</a>
+              <a href="#" class="topic-tag">#WomenLeaders</a>
+              <a href="#" class="topic-tag">#HumanStories</a>
+              <a href="#" class="topic-tag">#InspiringPeople</a>
+              <a href="#" class="topic-tag">#BizarreNews</a>
+              <a href="#" class="topic-tag">#Lifestyle</a>
+              <a href="#" class="topic-tag">#AfricanHistory</a>
             </div>
           </div>
         </div>
@@ -143,7 +166,7 @@
               </button>
               <div class="dropdown-menu">
                 <a href="#"><i class="fas fa-user-circle"></i> My Account</a>
-                <a href="#"><i class="fas fa-bookmark"></i> Saved Articles</a>
+                <a href="#"><i class="fas fa-bookmark"></i> Saved Stories</a>
                 <a href="#"><i class="fas fa-history"></i> Reading History</a>
                 <a href="#"><i class="fas fa-bell"></i> Notifications</a>
                 <div class="dropdown-divider"></div>
@@ -164,13 +187,13 @@
     <div class="container">
       <span class="breaking-label"><i class="fas fa-bolt"></i> BREAKING:</span>
       <div class="ticker-content">
-        <span>New international cybersecurity pact signed in Geneva to combat rising global threats</span>
+        <span>Archaeologists uncover ancient city in Ethiopia dating back 2,000 years</span>
         <span class="ticker-separator">•</span>
-        <span>Tech Breakthrough: Kenyan startup unveils revolutionary AI education platform</span>
+        <span>Women leaders summit in Rwanda breaks attendance records</span>
         <span class="ticker-separator">•</span>
-        <span>Sports Exclusive: Harambee Stars prepare for crucial World Cup qualifier match!</span>
+        <span>Inspiring: Man's 20-year journey to build library in remote village</span>
         <span class="ticker-separator">•</span>
-        <span>Health Alert: New research on endemic disease prevention shows promising results</span>
+        <span>Bizarre discovery: Rare two-headed turtle found in Tanzania</span>
       </div>
     </div>
   </div>
@@ -225,91 +248,122 @@
           </div>
         </a>
         
-        <!-- Primary Navigation Categories -->
+        <!-- Primary Navigation Categories - UPDATED -->
         <div class="nav-categories">
           <ul class="category-menu">
             <li class="category-item">
               <a href="#" class="category-link">
-                <i class="fas fa-landmark"></i>
-                <span>Politics</span>
+                <div class="category-icon news">
+                  <i class="fas fa-theater-masks"></i>
+                </div>
+                <span class="category-text">Culture & Arts</span>
+                <span class="category-count">24</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
             </li>
             <li class="category-item">
               <a href="#" class="category-link">
-                <i class="fas fa-chart-line"></i>
-                <span>Business</span>
+                <div class="category-icon business">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <span class="category-text">History & Heritage</span>
+                <span class="category-count">18</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
             </li>
             <li class="category-item">
               <a href="#" class="category-link">
-                <i class="fas fa-laptop-code"></i>
-                <span>Technology</span>
+                <div class="category-icon tech">
+                  <i class="fas fa-crown"></i>
+                </div>
+                <span class="category-text">Women in Leadership</span>
+                <span class="category-count">32</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
             </li>
             <li class="category-item">
               <a href="#" class="category-link">
-                <i class="fas fa-flask"></i>
-                <span>Science</span>
+                <div class="category-icon health">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <span class="category-text">Human Interest Stories</span>
+                <span class="category-count">15</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
             </li>
             <li class="category-item">
               <a href="#" class="category-link">
-                <i class="fas fa-futbol"></i>
-                <span>Sports</span>
+                <div class="category-icon sports">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <span class="category-text">Profiles & Biographies</span>
+                <span class="category-count">21</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
             </li>
             <li class="category-item">
               <a href="#" class="category-link">
-                <i class="fas fa-film"></i>
-                <span>Entertainment</span>
+                <div class="category-icon entertainment">
+                  <i class="fas fa-surprise"></i>
+                </div>
+                <span class="category-text">Bizarre & Unusual</span>
+                <span class="category-count">12</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
             </li>
             <li class="category-item">
               <a href="#" class="category-link">
-                <i class="fas fa-edit"></i>
-                <span>Opinion</span>
+                <div class="category-icon opinion">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <span class="category-text">Lifestyle & Society</span>
+                <span class="category-count">8</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
             </li>
             <li class="category-item dropdown">
-              <a href="#" class="category-link">
-                <span>More</span>
-                <i class="fas fa-chevron-down"></i>
+              <a href="#" class="category-link" id="moreCategories">
+                <div class="category-icon more">
+                  <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <span class="category-text">More Stories</span>
+                <span class="category-arrow"><i class="fas fa-chevron-right"></i></span>
               </a>
               <!-- Mega Menu -->
-              <div class="mega-menu">
+              <div class="mega-menu" id="megaMenu">
                 <div class="mega-grid">
                   <div class="mega-column">
-                    <h4><i class="fas fa-utensils"></i> Lifestyle</h4>
-                    <a href="#"><i class="fas fa-utensils"></i> Food & Dining</a>
-                    <a href="#"><i class="fas fa-plane"></i> Travel</a>
-                    <a href="#"><i class="fas fa-car"></i> Auto</a>
-                    <a href="#"><i class="fas fa-home"></i> Real Estate</a>
-                    <a href="#"><i class="fas fa-heart"></i> Health & Wellness</a>
+                    <h4><i class="fas fa-book"></i> Inspiring Stories</h4>
+                    <a href="#"><i class="fas fa-hands-helping"></i> Community Heroes</a>
+                    <a href="#"><i class="fas fa-seedling"></i> Environmental Champions</a>
+                    <a href="#"><i class="fas fa-graduation-cap"></i> Education Pioneers</a>
+                    <a href="#"><i class="fas fa-heartbeat"></i> Health Innovators</a>
+                    <a href="#"><i class="fas fa-lightbulb"></i> Creative Minds</a>
                   </div>
                   <div class="mega-column">
-                    <h4><i class="fas fa-graduation-cap"></i> Education</h4>
-                    <a href="#"><i class="fas fa-graduation-cap"></i> Learning</a>
-                    <a href="#"><i class="fas fa-book"></i> Research</a>
-                    <a href="#"><i class="fas fa-university"></i> Institutions</a>
-                    <a href="#"><i class="fas fa-laptop"></i> E-Learning</a>
+                    <h4><i class="fas fa-camera"></i> Cultural Exploration</h4>
+                    <a href="#"><i class="fas fa-music"></i> Music & Dance</a>
+                    <a href="#"><i class="fas fa-paint-brush"></i> Art & Craft</a>
+                    <a href="#"><i class="fas fa-utensils"></i> Food Traditions</a>
+                    <a href="#"><i class="fas fa-tshirt"></i> Fashion Heritage</a>
                   </div>
                   <div class="mega-column">
-                    <h4><i class="fas fa-chart-pie"></i> Special Reports</h4>
-                    <a href="#"><i class="fas fa-chart-pie"></i> Data Journalism</a>
-                    <a href="#"><i class="fas fa-camera"></i> Photo Stories</a>
-                    <a href="#"><i class="fas fa-podcast"></i> Podcasts</a>
-                    <a href="#"><i class="fas fa-video"></i> Documentaries</a>
+                    <h4><i class="fas fa-chart-pie"></i> Society & Trends</h4>
+                    <a href="#"><i class="fas fa-chart-pie"></i> Social Movements</a>
+                    <a href="#"><i class="fas fa-camera"></i> Photo Essays</a>
+                    <a href="#"><i class="fas fa-podcast"></i> Oral Histories</a>
+                    <a href="#"><i class="fas fa-video"></i> Documentary Series</a>
                   </div>
                   <div class="mega-column">
-                    <h4><i class="fas fa-newspaper"></i> Regional</h4>
-                    <a href="#"><i class="fas fa-globe-africa"></i> East Africa</a>
-                    <a href="#"><i class="fas fa-globe-africa"></i> West Africa</a>
-                    <a href="#"><i class="fas fa-globe-africa"></i> Southern Africa</a>
-                    <a href="#"><i class="fas fa-globe-africa"></i> North Africa</a>
+                    <h4><i class="fas fa-globe-africa"></i> Regional Focus</h4>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> East Africa</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> West Africa</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Southern Africa</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> North Africa</a>
                   </div>
                 </div>
                 <div class="mega-footer">
-                  <a href="#" class="mega-view-all"><i class="fas fa-list"></i> View All Categories</a>
+                  <a href="#" class="mega-view-all"><i class="fas fa-list"></i> View All Stories</a>
                 </div>
               </div>
             </li>
@@ -349,51 +403,51 @@
   <div class="contextual-bar">
     <div class="container">
       <div class="contextual-content">
-        <!-- Live Scoreboards -->
+        <!-- Live Cultural Events -->
         <div class="live-scores">
           <div class="scores-header">
-            <i class="fas fa-futbol"></i>
-            <span>Live Scores</span>
+            <i class="fas fa-calendar-alt"></i>
+            <span>Live Events</span>
           </div>
           <div class="scores-container">
             <div class="sport-match active">
-              <span class="sport-icon"><i class="fas fa-futbol"></i></span>
-              <span class="team">KEN</span>
-              <span class="score">2 - 1</span>
-              <span class="team">UGA</span>
-              <span class="match-status live">LIVE 75'</span>
+              <span class="sport-icon"><i class="fas fa-music"></i></span>
+              <span class="team">Cultural</span>
+              <span class="score">Festival</span>
+              <span class="team">Live</span>
+              <span class="match-status live">NOW</span>
             </div>
             <div class="sport-match">
-              <span class="sport-icon"><i class="fas fa-basketball-ball"></i></span>
-              <span class="team">NGR</span>
-              <span class="score">85 - 78</span>
-              <span class="team">RSA</span>
-              <span class="match-status">Q4</span>
+              <span class="sport-icon"><i class="fas fa-microphone-alt"></i></span>
+              <span class="team">Women</span>
+              <span class="score">Summit</span>
+              <span class="team">Day 2</span>
+              <span class="match-status">LIVE</span>
             </div>
           </div>
         </div>
         
-        <!-- Stock Market Index -->
+        <!-- Heritage Sites Status -->
         <div class="stock-index">
           <div class="stocks-header">
-            <i class="fas fa-chart-line"></i>
-            <span>Markets</span>
+            <i class="fas fa-landmark"></i>
+            <span>Heritage</span>
           </div>
           <div class="stocks-container">
             <div class="index-item">
-              <span class="index-name">NSE</span>
-              <span class="index-value">1,842.15</span>
-              <span class="index-change positive">+1.2%</span>
+              <span class="index-name">UNESCO</span>
+              <span class="index-value">145</span>
+              <span class="index-change positive">+5</span>
             </div>
             <div class="index-item">
-              <span class="index-name">JSE</span>
-              <span class="index-value">73,450.80</span>
-              <span class="index-change positive">+0.8%</span>
+              <span class="index-name">Sites</span>
+              <span class="index-value">Africa</span>
+              <span class="index-change positive">New</span>
             </div>
             <div class="index-item">
-              <span class="index-name">NGX</span>
-              <span class="index-value">52,308.25</span>
-              <span class="index-change negative">-0.3%</span>
+              <span class="index-name">Protected</span>
+              <span class="index-value">98%</span>
+              <span class="index-change positive">✓</span>
             </div>
           </div>
         </div>
@@ -405,9 +459,9 @@
             <span>Daily Poll</span>
           </div>
           <div class="poll-question">
-            <span>Is AI regulation necessary in Africa?</span>
+            <span>Should cultural heritage be taught in schools?</span>
             <div class="poll-options">
-              <button class="poll-option">Yes</button>
+              <button class="poll-option active">Yes</button>
               <button class="poll-option">No</button>
               <button class="poll-option">Unsure</button>
             </div>
@@ -423,11 +477,11 @@
           <div class="toggle-buttons">
             <button class="local-switch active" data-region="nairobi">
               <i class="fas fa-map-marker-alt"></i>
-              <span>Nairobi</span>
+              <span>Local</span>
             </button>
             <button class="local-switch" data-region="national">
               <i class="fas fa-globe-africa"></i>
-              <span>National</span>
+              <span>Africa</span>
             </button>
             <button class="local-switch" data-region="global">
               <i class="fas fa-globe"></i>
@@ -443,8 +497,8 @@
             <span>Newsletter</span>
           </div>
           <div class="newsletter-form-mini">
-            <input type="email" placeholder="Email for updates" class="newsletter-input">
-            <button class="newsletter-button">
+            <input type="email" placeholder="Email for updates" class="newsletter-input" aria-label="Email for newsletter">
+            <button class="newsletter-button" aria-label="Subscribe">
               <i class="fas fa-paper-plane"></i>
             </button>
           </div>
@@ -461,13 +515,13 @@
       </button>
       <div class="search-content">
         <h2 class="search-title">Search HMW Beyond Borders</h2>
-        <p class="search-subtitle">Find news, articles, videos, and more</p>
+        <p class="search-subtitle">Find inspiring stories, cultural insights, and human interest features</p>
         
         <div class="search-input-group">
           <div class="search-icon">
             <i class="fas fa-search"></i>
           </div>
-          <input type="search" class="search-input-full" placeholder="Search for news, topics, authors..." autofocus>
+          <input type="search" class="search-input-full" placeholder="Search for stories, culture, biographies..." autofocus aria-label="Search">
           <button class="search-button-full">
             <i class="fas fa-search"></i>
             Search
@@ -477,22 +531,36 @@
         <div class="search-suggestions">
           <h4>Trending Searches</h4>
           <div class="suggestion-tags">
-            <a href="#">Artificial Intelligence Africa</a>
-            <a href="#">Climate Change Solutions</a>
-            <a href="#">Elections 2025</a>
-            <a href="#">Startup Funding Africa</a>
-            <a href="#">Healthcare Innovation</a>
-            <a href="#">Renewable Energy Kenya</a>
-            <a href="#">Digital Economy Growth</a>
+            <a href="#">African Cultural Heritage</a>
+            <a href="#">Women Leaders Africa</a>
+            <a href="#">Inspiring Life Stories</a>
+            <a href="#">Historical Discoveries</a>
+            <a href="#">Bizarre Natural Phenomena</a>
+            <a href="#">Traditional Arts</a>
+            <a href="#">Community Heroes</a>
           </div>
         </div>
         
         <div class="recent-searches">
           <h4>Recent Searches</h4>
           <div class="recent-list">
-            <a href="#"><i class="fas fa-history"></i> Blockchain technology</a>
-            <a href="#"><i class="fas fa-history"></i> Women empowerment</a>
-            <a href="#"><i class="fas fa-history"></i> Sustainable agriculture</a>
+            <a href="#"><i class="fas fa-history"></i> Ancient civilizations</a>
+            <a href="#"><i class="fas fa-history"></i> Female entrepreneurs</a>
+            <a href="#"><i class="fas fa-history"></i> Unique traditions</a>
+          </div>
+        </div>
+        
+        <!-- Search Categories -->
+        <div class="search-categories">
+          <h4>Browse by Category</h4>
+          <div class="category-tags">
+            <a href="#" class="category-tag culture"><i class="fas fa-theater-masks"></i> Culture</a>
+            <a href="#" class="category-tag history"><i class="fas fa-landmark"></i> History</a>
+            <a href="#" class="category-tag women"><i class="fas fa-crown"></i> Women Leaders</a>
+            <a href="#" class="category-tag human"><i class="fas fa-heart"></i> Human Interest</a>
+            <a href="#" class="category-tag profiles"><i class="fas fa-user-tie"></i> Profiles</a>
+            <a href="#" class="category-tag bizarre"><i class="fas fa-surprise"></i> Bizarre Stories</a>
+            <a href="#" class="category-tag lifestyle"><i class="fas fa-utensils"></i> Lifestyle</a>
           </div>
         </div>
       </div>
@@ -506,13 +574,14 @@
       <span>Home</span>
     </a>
     <a href="#" class="nav-item">
-      <i class="fas fa-fire"></i>
-      <span>Trending</span>
+      <i class="fas fa-heart"></i>
+      <span>Stories</span>
+      <span class="nav-badge">12</span>
     </a>
     <a href="#" class="nav-item">
       <i class="fas fa-play-circle"></i>
       <span>Video</span>
-      <span class="nav-badge">LIVE</span>
+      <span class="nav-badge live">LIVE</span>
     </a>
     <a href="#" class="nav-item search-mobile">
       <i class="fas fa-search"></i>
@@ -532,76 +601,109 @@
       <nav class="breadcrumb-nav" aria-label="Breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Technology</a></li>
-          <li class="breadcrumb-item"><a href="#">Artificial Intelligence</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Healthcare AI</li>
+          <li class="breadcrumb-item"><a href="#">Culture & Arts</a></li>
+          <li class="breadcrumb-item"><a href="#">Traditional Arts</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Basket Weaving Revival</li>
         </ol>
       </nav>
       
-      <!-- Hero Section -->
+      <!-- Hero Section - UPDATED CONTENT -->
       <section class="hero-section">
         <div class="hero-grid">
           <!-- Main Hero Article -->
-          <article class="hero-main">
+          <article class="hero-main" itemscope itemtype="https://schema.org/NewsArticle">
             <div class="hero-image-container">
-              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                   alt="AI technology in healthcare" 
+              <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                   alt="Elderly woman teaching traditional basket weaving to young girls in a village" 
                    class="hero-image"
-                   loading="eager">
+                   loading="eager"
+                   itemprop="image">
               <div class="hero-badge">EXCLUSIVE</div>
               <div class="hero-actions">
-                <button class="hero-action" aria-label="Share article">
+                <button class="hero-action" aria-label="Share story">
                   <i class="fas fa-share-alt"></i>
                 </button>
-                <button class="hero-action" aria-label="Save article">
+                <button class="hero-action" aria-label="Save story">
                   <i class="far fa-bookmark"></i>
                 </button>
                 <button class="hero-action" aria-label="Play video">
                   <i class="fas fa-play"></i>
                 </button>
+                <button class="hero-action" aria-label="Listen to audio">
+                  <i class="fas fa-headphones"></i>
+                </button>
+              </div>
+              <div class="hero-image-overlay">
+                <span class="overlay-text"><i class="fas fa-camera"></i> Photo: Cultural Heritage Archive</span>
               </div>
             </div>
             <div class="hero-content">
-              <div class="category-label">Technology / Healthcare</div>
-              <h2 class="hero-title">AI Revolution: Transforming East African Healthcare</h2>
-              <p class="hero-excerpt">Groundbreaking developments in artificial intelligence are revolutionizing healthcare from diagnostics to personalized treatment plans across the region, promising to save millions of lives and billions in costs.</p>
+              <div class="category-label">Culture & Arts / Tradition</div>
+              <h2 class="hero-title" itemprop="headline">Weaving Legacy: How Grandmothers Are Preserving Ancient Crafts</h2>
+              <p class="hero-excerpt" itemprop="description">In remote villages across Africa, elderly women are passing down centuries-old weaving techniques to younger generations, creating economic opportunities while preserving cultural heritage.</p>
+              
+              <div class="hero-ai-summary">
+                <div class="ai-summary-header">
+                  <i class="fas fa-robot"></i>
+                  <span>Story Summary</span>
+                </div>
+                <div class="ai-summary-content">
+                  <p>Traditional basket weaving, once facing extinction, is experiencing a remarkable revival. This story explores how grandmothers across 12 African countries are teaching ancient techniques, creating sustainable livelihoods, and keeping cultural traditions alive for future generations.</p>
+                </div>
+              </div>
+              
               <div class="hero-meta">
-                <div class="author">
+                <div class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
                   <img src="https://images.unsplash.com/photo-1494790108755-2616b786d49f?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" 
-                       alt="Dr. Anya Sharma" 
-                       class="author-avatar">
+                       alt="Sarah Mwangi" 
+                       class="author-avatar"
+                       itemprop="image">
                   <div class="author-info">
-                    <span class="author-name">Dr. Anya Sharma</span>
-                    <span class="author-title">Lead Health Innovations Correspondent</span>
-                    <span class="article-date"><i class="far fa-clock"></i> 2 hours ago</span>
+                    <span class="author-name" itemprop="name">Sarah Mwangi</span>
+                    <span class="author-title" itemprop="jobTitle">Cultural Heritage Correspondent</span>
+                    <span class="author-verified">
+                      <i class="fas fa-check-circle"></i> Verified Journalist
+                    </span>
+                    <span class="article-date" itemprop="datePublished">
+                      <i class="far fa-clock"></i> <time datetime="2025-01-18T10:30:00Z">2 hours ago</time>
+                    </span>
                   </div>
                 </div>
                 <div class="article-stats">
-                  <span><i class="far fa-eye"></i> 2.4K</span>
-                  <span><i class="far fa-comment"></i> 42</span>
-                  <span><i class="fas fa-share"></i> 156</span>
-                  <span><i class="far fa-clock"></i> 8 min read</span>
+                  <span><i class="far fa-eye"></i> <span itemprop="interactionCount">3.2K</span></span>
+                  <span><i class="far fa-comment"></i> <span itemprop="commentCount">58</span></span>
+                  <span><i class="fas fa-share"></i> 210</span>
+                  <span><i class="far fa-clock"></i> 7 min read</span>
+                  <span class="reading-progress">
+                    <div class="progress-bar">
+                      <div class="progress-fill"></div>
+                    </div>
+                  </span>
                 </div>
               </div>
             </div>
           </article>
           
-          <!-- Side Hero Articles -->
+          <!-- Side Hero Articles - UPDATED -->
           <div class="hero-side">
             <article class="side-article featured">
               <div class="side-image">
                 <img src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                     alt="Climate summit" 
+                     alt="Women leaders at conference table" 
                      loading="lazy">
                 <div class="side-badge">BREAKING</div>
+                <div class="side-image-overlay">
+                  <i class="fas fa-play-circle"></i>
+                </div>
               </div>
               <div class="side-content">
-                <div class="category-label">Environment</div>
-                <h3>Climate Summit Reaches Historic Agreement on Carbon Reduction</h3>
-                <p class="side-excerpt">Global leaders commit to ambitious 2030 targets at Nairobi conference.</p>
+                <div class="category-label">Women in Leadership</div>
+                <h3>Record Number of Women Elected in Local Elections Across Africa</h3>
+                <p class="side-excerpt">Historic wins mark significant shift in political representation, with female candidates winning 45% more seats than previous elections.</p>
                 <div class="article-meta">
                   <span><i class="far fa-clock"></i> 45 min ago</span>
-                  <span><i class="far fa-eye"></i> 1.2K</span>
+                  <span><i class="far fa-eye"></i> 2.1K</span>
+                  <span><i class="fas fa-video"></i> Video</span>
                 </div>
               </div>
             </article>
@@ -609,16 +711,18 @@
             <article class="side-article">
               <div class="side-image">
                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                     alt="Stock market" 
+                     alt="Ancient archaeological site excavation" 
                      loading="lazy">
+                <div class="side-badge">DISCOVERY</div>
               </div>
               <div class="side-content">
-                <div class="category-label">Business</div>
-                <h3>Stock Markets Surge on Strong Tech Earnings Report</h3>
-                <p class="side-excerpt">African tech stocks lead gains as sector shows robust growth.</p>
+                <div class="category-label">History & Heritage</div>
+                <h3>Lost City Uncovered: 2,000-Year-Old Settlement Found in Ethiopian Highlands</h3>
+                <p class="side-excerpt">Archaeologists uncover well-preserved structures that could rewrite early African civilization history.</p>
                 <div class="article-meta">
                   <span><i class="far fa-clock"></i> 1 hour ago</span>
-                  <span><i class="far fa-eye"></i> 980</span>
+                  <span><i class="far fa-eye"></i> 1.8K</span>
+                  <span><i class="fas fa-landmark"></i> Exclusive</span>
                 </div>
               </div>
             </article>
@@ -626,46 +730,138 @@
             <article class="side-article">
               <div class="side-image">
                 <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                     alt="Startup funding" 
+                     alt="Man with disability climbing mountain" 
                      loading="lazy">
               </div>
               <div class="side-content">
-                <div class="category-label">Startups</div>
-                <h3>Kenyan Fintech Raises $50M Series B Funding</h3>
-                <p class="side-excerpt">Local startup plans to expand across East Africa with new investment.</p>
+                <div class="category-label">Human Interest</div>
+                <h3>Against All Odds: Double Amputee Conquers Mount Kilimanjaro</h3>
+                <p class="side-excerpt">Inspiring journey of determination and resilience becomes symbol of human potential.</p>
                 <div class="article-meta">
                   <span><i class="far fa-clock"></i> 3 hours ago</span>
-                  <span><i class="far fa-eye"></i> 1.5K</span>
+                  <span><i class="far fa-eye"></i> 3.5K</span>
                 </div>
               </div>
             </article>
+            
+            <!-- Breaking News Alert -->
+            <div class="breaking-alert">
+              <div class="breaking-alert-icon">
+                <i class="fas fa-exclamation-circle"></i>
+              </div>
+              <div class="breaking-alert-content">
+                <h4>Cultural Emergency</h4>
+                <p>Historic mosque in Timbuktu threatened by flooding. Preservation efforts underway.</p>
+                <button class="btn-alert-follow">Follow Updates <i class="fas fa-external-link-alt"></i></button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       
+      <!-- Quick Stats Bar - UPDATED -->
+      <div class="quick-stats-bar">
+        <div class="stats-container">
+          <div class="stat-item">
+            <i class="fas fa-book-open"></i>
+            <div class="stat-info">
+              <span class="stat-value">850</span>
+              <span class="stat-label">Stories Published</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <div class="stat-info">
+              <span class="stat-value">2.4M</span>
+              <span class="stat-label">Active Readers</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-globe-africa"></i>
+            <div class="stat-info">
+              <span class="stat-value">45</span>
+              <span class="stat-label">Countries Covered</span>
+            </div>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-heart"></i>
+            <div class="stat-info">
+              <span class="stat-value">12K</span>
+              <span class="stat-label">Inspired Readers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <!-- Content Grid with Sidebars -->
       <div class="content-layout">
-        <!-- Left Sidebar -->
+        <!-- Left Sidebar - UPDATED -->
         <aside class="left-sidebar">
-          <!-- Editor's Picks -->
+          <!-- Editor's Picks - UPDATED -->
           <div class="sidebar-widget editors-picks">
             <h3 class="widget-title">
               <i class="fas fa-star"></i>
               Editor's Picks
+              <span class="widget-badge">CURATED</span>
             </h3>
             <div class="picks-list">
               <article class="pick-item">
                 <div class="pick-rank">1</div>
                 <div class="pick-content">
-                  <h4>Investigative Report: The Future of African Cities</h4>
+                  <h4>The Last Storytellers: Preserving Oral History Traditions</h4>
                   <div class="pick-meta">
-                    <span>Urban Planning</span>
+                    <span class="pick-category">Cultural Heritage</span>
                     <span><i class="far fa-clock"></i> 15 min</span>
+                    <span><i class="fas fa-chart-line"></i> Trending</span>
                   </div>
                 </div>
               </article>
-              <!-- More picks... -->
+              <article class="pick-item">
+                <div class="pick-rank">2</div>
+                <div class="pick-content">
+                  <h4>Meet Africa's Youngest Female Tech CEO</h4>
+                  <div class="pick-meta">
+                    <span class="pick-category">Women Leaders</span>
+                    <span><i class="far fa-clock"></i> 12 min</span>
+                  </div>
+                </div>
+              </article>
+              <article class="pick-item">
+                <div class="pick-rank">3</div>
+                <div class="pick-content">
+                  <h4>The Man Who Built a School With His Bare Hands</h4>
+                  <div class="pick-meta">
+                    <span class="pick-category">Human Interest</span>
+                    <span><i class="far fa-clock"></i> 8 min</span>
+                  </div>
+                </div>
+              </article>
+              <article class="pick-item">
+                <div class="pick-rank">4</div>
+                <div class="pick-content">
+                  <h4>Mysterious Stone Circles: Africa's Ancient Puzzle</h4>
+                  <div class="pick-meta">
+                    <span class="pick-category">History</span>
+                    <span><i class="far fa-clock"></i> 10 min</span>
+                  </div>
+                </div>
+              </article>
+              <article class="pick-item">
+                <div class="pick-rank">5</div>
+                <div class="pick-content">
+                  <h4>The Rainbow Village: How Color Transformed a Community</h4>
+                  <div class="pick-meta">
+                    <span class="pick-category">Lifestyle</span>
+                    <span><i class="far fa-clock"></i> 7 min</span>
+                    <span><i class="fas fa-fire"></i> Hot</span>
+                  </div>
+                </div>
+              </article>
             </div>
+            <button class="btn-view-picks">
+              <i class="fas fa-list"></i>
+              View All Picks
+            </button>
           </div>
           
           <!-- Social Media Follow -->
@@ -674,143 +870,338 @@
             <div class="social-grid">
               <a href="#" class="social-item whatsapp">
                 <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-                <small>Join Channel</small>
+                <div class="social-info">
+                  <span>WhatsApp</span>
+                  <small>Story Channel</small>
+                </div>
+                <span class="social-count">28K+</span>
               </a>
               <a href="#" class="social-item twitter">
                 <i class="fab fa-x-twitter"></i>
-                <span>Twitter</span>
-                <small>189K followers</small>
+                <div class="social-info">
+                  <span>Twitter</span>
+                  <small>215K followers</small>
+                </div>
+                <span class="social-count">215K</span>
               </a>
               <a href="#" class="social-item facebook">
                 <i class="fab fa-facebook-f"></i>
-                <span>Facebook</span>
-                <small>245K followers</small>
+                <div class="social-info">
+                  <span>Facebook</span>
+                  <small>280K followers</small>
+                </div>
+                <span class="social-count">280K</span>
               </a>
               <a href="#" class="social-item instagram">
                 <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-                <small>156K followers</small>
+                <div class="social-info">
+                  <span>Instagram</span>
+                  <small>189K followers</small>
+                </div>
+                <span class="social-count">189K</span>
               </a>
               <a href="#" class="social-item youtube">
                 <i class="fab fa-youtube"></i>
-                <span>YouTube</span>
-                <small>89K subscribers</small>
+                <div class="social-info">
+                  <span>YouTube</span>
+                  <small>112K subscribers</small>
+                </div>
+                <span class="social-count">112K</span>
               </a>
               <a href="#" class="social-item linkedin">
                 <i class="fab fa-linkedin-in"></i>
-                <span>LinkedIn</span>
-                <small>45K followers</small>
+                <div class="social-info">
+                  <span>LinkedIn</span>
+                  <small>58K followers</small>
+                </div>
+                <span class="social-count">58K</span>
               </a>
+            </div>
+            <div class="social-engagement">
+              <span class="engagement-item">
+                <i class="fas fa-eye"></i>
+                <span>1.8M Monthly Views</span>
+              </span>
+              <span class="engagement-item">
+                <i class="fas fa-share-alt"></i>
+                <span>68K Daily Shares</span>
+              </span>
             </div>
           </div>
           
-          <!-- Trending Now -->
+          <!-- Trending Now - UPDATED -->
           <div class="sidebar-widget trending-widget">
             <h3 class="widget-title">
               <i class="fas fa-chart-line"></i>
-              Trending Now
+              Trending Stories
+              <span class="trending-badge">HOT</span>
             </h3>
             <div class="trending-list">
               <div class="trending-item">
                 <span class="trending-rank">1</span>
                 <div class="trending-content">
-                  <h4>New AI Regulations Proposed Across Africa</h4>
+                  <h4>Rediscovered: Ancient Healing Plant Thought Extinct</h4>
                   <div class="trending-stats">
-                    <span><i class="far fa-eye"></i> 45K views</span>
-                    <span><i class="fas fa-share"></i> 1.2K shares</span>
+                    <span><i class="far fa-eye"></i> 58K views</span>
+                    <span><i class="fas fa-share"></i> 2.1K shares</span>
+                    <span class="trending-growth"><i class="fas fa-arrow-up"></i> 320%</span>
                   </div>
                 </div>
               </div>
-              <!-- More trending items... -->
+              <div class="trending-item">
+                <span class="trending-rank">2</span>
+                <div class="trending-content">
+                  <h4>The 100-Year-Old Dancer Still Teaching Ballet</h4>
+                  <div class="trending-stats">
+                    <span><i class="far fa-eye"></i> 45K views</span>
+                    <span><i class="fas fa-share"></i> 1.5K shares</span>
+                    <span class="trending-growth"><i class="fas fa-arrow-up"></i> 245%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="trending-item">
+                <span class="trending-rank">3</span>
+                <div class="trending-content">
+                  <h4>Bizarre Weather: Raining Fish in Desert Town</h4>
+                  <div class="trending-stats">
+                    <span><i class="far fa-eye"></i> 72K views</span>
+                    <span><i class="fas fa-share"></i> 3.2K shares</span>
+                    <span class="trending-growth"><i class="fas fa-arrow-up"></i> 410%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="trending-item">
+                <span class="trending-rank">4</span>
+                <div class="trending-content">
+                  <h4>From Refugee to Restaurant Empire: A Success Story</h4>
+                  <div class="trending-stats">
+                    <span><i class="far fa-eye"></i> 38K views</span>
+                    <span><i class="fas fa-share"></i> 1.2K shares</span>
+                    <span class="trending-growth"><i class="fas fa-arrow-up"></i> 195%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="trending-controls">
+              <button class="btn-refresh-trending">
+                <i class="fas fa-sync-alt"></i>
+                Refresh
+              </button>
+              <button class="btn-view-trending">
+                <i class="fas fa-external-link-alt"></i>
+                View Analytics
+              </button>
             </div>
           </div>
           
-          <!-- Live Updates -->
+          <!-- Live Updates - UPDATED -->
           <div class="sidebar-widget live-widget">
             <h3 class="widget-title">
               <i class="fas fa-broadcast-tower"></i>
-              Live Updates
+              Cultural Updates
+              <span class="live-indicator">
+                <i class="fas fa-circle"></i> LIVE
+              </span>
             </h3>
-            <div class="live-feed">
+            <div class="live-feed" id="liveFeed">
               <div class="update-item">
                 <span class="update-time">14:30</span>
-                <span class="update-text">Breaking: New trade agreement signed between African nations</span>
+                <span class="update-text">Breaking: UNESCO adds 3 new African sites to World Heritage List, including ancient trading city</span>
+                <span class="update-badge">HERITAGE</span>
               </div>
               <div class="update-item">
                 <span class="update-time">14:15</span>
-                <span class="update-text">Stock markets opening higher across Africa</span>
+                <span class="update-text">Women's entrepreneurship conference breaks records with 5,000 attendees from 40 countries</span>
+                <span class="update-badge">LEADERSHIP</span>
               </div>
               <div class="update-item">
                 <span class="update-time">14:00</span>
-                <span class="update-text">Tech conference keynote speech begins in Lagos</span>
+                <span class="update-text">Rare cultural festival begins in Mali, featuring ancient rituals passed down for centuries</span>
+                <span class="update-badge">CULTURE</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">13:45</span>
+                <span class="update-text">Community hero recognized: Man who planted 1 million trees receives international award</span>
+                <span class="update-badge">INSPIRING</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">13:30</span>
+                <span class="update-text">Bizarre discovery: Perfectly preserved 500-year-old ship found in desert</span>
+                <span class="update-badge">MYSTERY</span>
               </div>
             </div>
-            <button class="view-all-updates">
-              <i class="fas fa-external-link-alt"></i>
-              View All Updates
-            </button>
+            <div class="live-controls">
+              <button class="btn-pause-live" id="pauseLive">
+                <i class="fas fa-pause"></i>
+                Pause Updates
+              </button>
+              <button class="view-all-updates">
+                <i class="fas fa-external-link-alt"></i>
+                View All Updates
+              </button>
+            </div>
+          </div>
+          
+          <!-- Quick Access Menu -->
+          <div class="sidebar-widget quick-access">
+            <h3 class="widget-title">
+              <i class="fas fa-bolt"></i>
+              Quick Access
+            </h3>
+            <div class="quick-links">
+              <a href="#" class="quick-link">
+                <i class="fas fa-download"></i>
+                <span>Download App</span>
+              </a>
+              <a href="#" class="quick-link">
+                <i class="fas fa-bell"></i>
+                <span>Story Alerts</span>
+              </a>
+              <a href="#" class="quick-link">
+                <i class="fas fa-cog"></i>
+                <span>Preferences</span>
+              </a>
+              <a href="#" class="quick-link">
+                <i class="fas fa-question-circle"></i>
+                <span>Help Center</span>
+              </a>
+              <a href="#" class="quick-link">
+                <i class="fas fa-flag"></i>
+                <span>Submit Story</span>
+              </a>
+            </div>
           </div>
         </aside>
         
-        <!-- Main Content -->
+        <!-- Main Content - UPDATED -->
         <div class="main-content-area">
           
-          <!-- Categories Quick Access -->
+          <!-- Categories Quick Access - UPDATED -->
           <section class="quick-categories">
+            <h2 class="section-title">Explore Our Stories</h2>
             <div class="categories-grid">
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-theater-masks"></i>
+                </div>
+                <h3>Culture & Arts</h3>
+                <p>Traditional arts, music, dance & cultural expressions</p>
+                <span class="category-count">24 new</span>
+                <div class="category-trend">
+                  <i class="fas fa-arrow-up"></i>
+                  <span>18% trend</span>
+                </div>
+              </a>
               <a href="#" class="category-card">
                 <div class="category-icon">
                   <i class="fas fa-landmark"></i>
                 </div>
-                <h3>Politics</h3>
-                <p>Latest political developments</p>
-                <span class="category-count">24 new</span>
-              </a>
-              <a href="#" class="category-card">
-                <div class="category-icon">
-                  <i class="fas fa-chart-line"></i>
-                </div>
-                <h3>Business</h3>
-                <p>Markets & finance</p>
+                <h3>History & Heritage</h3>
+                <p>Archaeological discoveries & preservation efforts</p>
                 <span class="category-count">18 new</span>
+                <div class="category-trend">
+                  <i class="fas fa-arrow-up"></i>
+                  <span>25% trend</span>
+                </div>
               </a>
               <a href="#" class="category-card">
                 <div class="category-icon">
-                  <i class="fas fa-laptop-code"></i>
+                  <i class="fas fa-crown"></i>
                 </div>
-                <h3>Technology</h3>
-                <p>Innovation & startups</p>
+                <h3>Women in Leadership</h3>
+                <p>Female pioneers breaking barriers across sectors</p>
                 <span class="category-count">32 new</span>
+                <div class="category-trend">
+                  <i class="fas fa-arrow-up"></i>
+                  <span>42% trend</span>
+                </div>
               </a>
               <a href="#" class="category-card">
                 <div class="category-icon">
-                  <i class="fas fa-futbol"></i>
+                  <i class="fas fa-heart"></i>
                 </div>
-                <h3>Sports</h3>
-                <p>Live scores & analysis</p>
+                <h3>Human Interest</h3>
+                <p>Inspiring stories of resilience & community impact</p>
                 <span class="category-count">15 new</span>
+                <div class="category-trend">
+                  <i class="fas fa-fire"></i>
+                  <span>Hot</span>
+                </div>
+              </a>
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-user-tie"></i>
+                </div>
+                <h3>Profiles & Biographies</h3>
+                <p>Remarkable individuals & their life journeys</p>
+                <span class="category-count">21 new</span>
+                <div class="category-trend">
+                  <i class="fas fa-arrow-up"></i>
+                  <span>22% trend</span>
+                </div>
+              </a>
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-surprise"></i>
+                </div>
+                <h3>Bizarre & Unusual</h3>
+                <p>Extraordinary discoveries & strange phenomena</p>
+                <span class="category-count">12 new</span>
+                <div class="category-trend">
+                  <i class="fas fa-arrow-up"></i>
+                  <span>35% trend</span>
+                </div>
+              </a>
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Lifestyle & Society</h3>
+                <p>Social trends, traditions & community life</p>
+                <span class="category-count">28 new</span>
+                <div class="category-trend">
+                  <i class="fas fa-fire"></i>
+                  <span>Hot</span>
+                </div>
+              </a>
+              <a href="#" class="category-card view-all-categories">
+                <div class="category-icon">
+                  <i class="fas fa-th-large"></i>
+                </div>
+                <h3>All Stories</h3>
+                <p>Browse complete collection of inspiring narratives</p>
+                <span class="category-count">850+</span>
               </a>
             </div>
           </section>
           
-          <!-- Latest News Section -->
+          <!-- Latest Stories Section - UPDATED -->
           <section class="latest-news">
             <div class="section-header">
               <h2 class="section-title">
-                <i class="fas fa-newspaper"></i>
-                Latest News
+                <i class="fas fa-book-open"></i>
+                Latest Stories
+                <span class="section-subtitle">Updated every hour</span>
               </h2>
               <div class="section-actions">
-                <button class="btn-view-all">View All <i class="fas fa-arrow-right"></i></button>
                 <div class="news-filter">
                   <select class="filter-select">
                     <option>All Categories</option>
-                    <option>Politics</option>
-                    <option>Business</option>
-                    <option>Technology</option>
+                    <option>Culture & Arts</option>
+                    <option>History & Heritage</option>
+                    <option>Women in Leadership</option>
+                    <option>Human Interest</option>
+                    <option>Profiles</option>
+                    <option>Bizarre Stories</option>
+                    <option>Lifestyle</option>
+                  </select>
+                  <select class="filter-select">
+                    <option>Sort by: Latest</option>
+                    <option>Sort by: Most Read</option>
+                    <option>Sort by: Most Shared</option>
                   </select>
                 </div>
+                <button class="btn-view-all">View All Stories <i class="fas fa-arrow-right"></i></button>
               </div>
             </div>
             
@@ -818,57 +1209,266 @@
               <article class="news-card">
                 <div class="news-image">
                   <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
-                       alt="Renewable energy" 
+                       alt="Traditional fabric weaving in vibrant colors" 
                        loading="lazy">
                   <div class="news-badge">EXCLUSIVE</div>
+                  <div class="news-image-overlay">
+                    <span><i class="fas fa-camera"></i> Cultural Archives</span>
+                  </div>
                 </div>
                 <div class="news-content">
-                  <div class="news-category">Energy</div>
-                  <h3 class="news-title">Solar Power Expansion Across Africa to Reach 10 Million Homes</h3>
-                  <p class="news-excerpt">New investments in solar infrastructure promise to bring electricity to millions, with Kenya leading the renewable energy revolution.</p>
+                  <div class="news-category">Culture & Arts</div>
+                  <h3 class="news-title">The Color Keepers: Preserving Africa's Vibrant Textile Traditions</h3>
+                  <p class="news-excerpt">Master dyers in Mali and Nigeria are using ancient techniques to create textiles that tell stories, preserve history, and support sustainable livelihoods for hundreds of artisans.</p>
+                  <div class="news-stats">
+                    <span class="news-stat"><i class="fas fa-chart-line"></i> 52% more engagement</span>
+                    <span class="news-stat"><i class="fas fa-comments"></i> 89 comments</span>
+                  </div>
                   <div class="news-meta">
                     <div class="author-info">
                       <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=30&q=80" 
-                           alt="Energy Desk" 
+                           alt="Cultural Desk" 
                            class="author-thumb">
-                      <span class="author">Energy Desk</span>
+                      <div class="author-details">
+                        <span class="author">Cultural Desk</span>
+                        <span class="author-role">Arts Correspondent</span>
+                      </div>
                     </div>
                     <div class="meta-right">
                       <span class="time"><i class="far fa-clock"></i> 3 hours ago</span>
-                      <span class="read-time">5 min read</span>
+                      <span class="read-time">6 min read</span>
+                      <button class="btn-save-article" aria-label="Save story">
+                        <i class="far fa-bookmark"></i>
+                      </button>
                     </div>
                   </div>
                 </div>
               </article>
               
-              <!-- More news cards... -->
+              <article class="news-card">
+                <div class="news-image">
+                  <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                       alt="Female scientist in laboratory" 
+                       loading="lazy">
+                  <div class="news-badge">PROFILE</div>
+                </div>
+                <div class="news-content">
+                  <div class="news-category">Women in Leadership</div>
+                  <h3 class="news-title">Dr. Amina's Quest: The Scientist Saving Lives Through Traditional Medicine</h3>
+                  <p class="news-excerpt">From documenting grandmothers' remedies to developing life-saving drugs, this Kenyan scientist is bridging ancient wisdom with modern science.</p>
+                  <div class="news-meta">
+                    <div class="author-info">
+                      <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=30&q=80" 
+                           alt="Women's Desk" 
+                           class="author-thumb">
+                      <span class="author">Women's Desk</span>
+                    </div>
+                    <div class="meta-right">
+                      <span class="time"><i class="far fa-clock"></i> 5 hours ago</span>
+                      <span class="read-time">8 min read</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              
+              <article class="news-card">
+                <div class="news-image">
+                  <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                       alt="Community garden project" 
+                       loading="lazy">
+                  <div class="news-badge">INSPIRING</div>
+                </div>
+                <div class="news-content">
+                  <div class="news-category">Human Interest</div>
+                  <h3 class="news-title">From Garbage Dump to Green Paradise: A Community's Transformation</h3>
+                  <p class="news-excerpt">Residents of a Nairobi slum turned a toxic wasteland into a thriving urban farm, creating jobs and restoring hope in their community.</p>
+                  <div class="news-meta">
+                    <div class="author-info">
+                      <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=30&q=80" 
+                           alt="Community Desk" 
+                           class="author-thumb">
+                      <span class="author">Community Desk</span>
+                    </div>
+                    <div class="meta-right">
+                      <span class="time"><i class="far fa-clock"></i> 7 hours ago</span>
+                      <span class="read-time">7 min read</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              
+              <article class="news-card featured">
+                <div class="news-image">
+                  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                       alt="Ancient manuscript restoration" 
+                       loading="lazy">
+                  <div class="news-badge">FEATURED</div>
+                </div>
+                <div class="news-content">
+                  <div class="news-category">History & Heritage</div>
+                  <h3 class="news-title">Lost Libraries Found: Digitizing Africa's Ancient Manuscripts</h3>
+                  <p class="news-excerpt">A monumental project is preserving thousands of fragile manuscripts, revealing Africa's rich literary history that predates European contact.</p>
+                  <div class="news-stats">
+                    <span class="news-stat"><i class="fas fa-fire"></i> 3.2K engagements</span>
+                    <span class="news-stat"><i class="fas fa-share-alt"></i> 620 shares</span>
+                  </div>
+                  <div class="news-meta">
+                    <div class="author-info">
+                      <img src="https://images.unsplash.com/photo-1494790108755-2616b786d49f?ixlib=rb-4.0.3&auto=format&fit=crop&w=30&q=80" 
+                           alt="History Desk" 
+                           class="author-thumb">
+                      <span class="author">History Desk</span>
+                    </div>
+                    <div class="meta-right">
+                      <span class="time"><i class="far fa-clock"></i> 1 day ago</span>
+                      <span class="read-time">10 min read</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more-container">
+              <button class="btn-load-more">
+                <i class="fas fa-sync-alt"></i>
+                Load More Stories
+              </button>
+              <div class="loading-indicator" id="loadingIndicator" style="display: none;">
+                <div class="spinner"></div>
+                <span>Loading more stories...</span>
+              </div>
             </div>
           </section>
           
-          <!-- Video Section -->
+          <!-- Video Section - UPDATED -->
           <section class="video-section">
             <div class="section-header">
               <h2 class="section-title">
                 <i class="fas fa-play-circle"></i>
                 Featured Videos
+                <span class="live-badge"><i class="fas fa-circle"></i> LIVE DOCUMENTARY</span>
               </h2>
               <a href="#" class="view-all">View All Videos <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="video-grid">
-              <!-- Video cards... -->
+              <div class="video-card main-video">
+                <div class="video-thumbnail">
+                  <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                       alt="Traditional pottery making process" 
+                       loading="lazy">
+                  <div class="video-overlay">
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-badge">PREMIERE</div>
+                    <div class="video-duration">52:18</div>
+                  </div>
+                </div>
+                <div class="video-content">
+                  <div class="video-category">Cultural Heritage</div>
+                  <h3 class="video-title">Hands of Time: The Last Traditional Potters of West Africa</h3>
+                  <p class="video-description">Documentary following three generations of potters as they preserve ancient techniques while adapting to modern markets.</p>
+                  <div class="video-meta">
+                    <span><i class="far fa-eye"></i> 45.5K watching</span>
+                    <span><i class="far fa-clock"></i> Premiered today</span>
+                    <span><i class="fas fa-user"></i> Documentary</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="video-card">
+                <div class="video-thumbnail">
+                  <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                       alt="Women entrepreneurs meeting" 
+                       loading="lazy">
+                  <div class="video-overlay">
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-duration">15:45</div>
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="video-title">She Leads: African Women Transforming Industries</h3>
+                  <div class="video-meta">
+                    <span><i class="far fa-eye"></i> 128K views</span>
+                    <span><i class="far fa-clock"></i> 3 days ago</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- More video cards... -->
             </div>
           </section>
           
-          <!-- Podcast Section -->
+          <!-- Podcast Section - UPDATED -->
           <section class="podcast-section">
             <div class="section-header">
               <h2 class="section-title">
                 <i class="fas fa-podcast"></i>
-                Latest Podcasts
+                Storytelling Podcasts
+                <span class="new-badge">NEW EPISODES</span>
               </h2>
+              <div class="podcast-controls">
+                <button class="btn-subscribe-podcast">
+                  <i class="fas fa-podcast"></i>
+                  Subscribe
+                </button>
+                <a href="#" class="view-all">All Episodes <i class="fas fa-arrow-right"></i></a>
+              </div>
             </div>
             <div class="podcast-grid">
-              <!-- Podcast cards... -->
+              <div class="podcast-card">
+                <div class="podcast-cover">
+                  <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                       alt="Podcast cover - Voices of Africa" 
+                       loading="lazy">
+                  <div class="podcast-play">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="podcast-info">
+                  <div class="podcast-category">ORAL HISTORY</div>
+                  <h3 class="podcast-title">Elders' Wisdom: Stories Untold</h3>
+                  <p class="podcast-description">Recording the memories and life lessons of Africa's oldest generation before they're lost forever</p>
+                  <div class="podcast-meta">
+                    <span><i class="far fa-clock"></i> 52 min</span>
+                    <span><i class="fas fa-headphones"></i> 4.8K listens</span>
+                    <span><i class="fas fa-star"></i> 4.9</span>
+                  </div>
+                </div>
+              </div>
+              <!-- More podcast cards... -->
+            </div>
+          </section>
+          
+          <!-- Special Report Section - UPDATED -->
+          <section class="special-report">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-file-alt"></i>
+                In-Depth Features
+                <span class="section-badge">LONG READ</span>
+              </h2>
+            </div>
+            <div class="report-grid">
+              <div class="report-card">
+                <div class="report-image">
+                  <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                       alt="Ancient rock art preservation" 
+                       loading="lazy">
+                </div>
+                <div class="report-content">
+                  <h3>The Cave Painters: Guardians of 10,000-Year-Old Stories</h3>
+                  <p>Meet the archaeologists and local communities working together to protect Africa's oldest art from climate change and vandalism.</p>
+                  <div class="report-meta">
+                    <span><i class="far fa-clock"></i> 18 min read</span>
+                    <span><i class="fas fa-chart-bar"></i> Research</span>
+                  </div>
+                </div>
+              </div>
+              <!-- More report cards... -->
             </div>
           </section>
         </div>
@@ -877,79 +1477,194 @@
         <aside class="right-sidebar">
           <!-- Weather Widget Detailed -->
           <div class="sidebar-widget weather-detailed">
-            <h3 class="widget-title">Weather</h3>
+            <h3 class="widget-title">
+              <i class="fas fa-sun"></i>
+              Weather
+              <button class="btn-refresh-weather" aria-label="Refresh weather">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </h3>
             <div class="weather-info">
               <div class="current-weather">
                 <i class="fas fa-sun"></i>
                 <div class="temp-display">
                   <span class="temp">24°C</span>
                   <span class="condition">Sunny</span>
-                  <span class="location">Nairobi, KE</span>
+                  <span class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Nairobi, KE
+                  </span>
                 </div>
               </div>
               <div class="weather-details">
                 <div class="detail-item">
                   <i class="fas fa-wind"></i>
-                  <span>Wind: 12 km/h</span>
+                  <div class="detail-info">
+                    <span class="detail-value">12 km/h</span>
+                    <span class="detail-label">Wind</span>
+                  </div>
                 </div>
                 <div class="detail-item">
                   <i class="fas fa-tint"></i>
-                  <span>Humidity: 65%</span>
+                  <div class="detail-info">
+                    <span class="detail-value">65%</span>
+                    <span class="detail-label">Humidity</span>
+                  </div>
                 </div>
                 <div class="detail-item">
                   <i class="fas fa-eye"></i>
-                  <span>Visibility: 10 km</span>
+                  <div class="detail-info">
+                    <span class="detail-value">10 km</span>
+                    <span class="detail-label">Visibility</span>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-temperature-high"></i>
+                  <div class="detail-info">
+                    <span class="detail-value">1013 hPa</span>
+                    <span class="detail-label">Pressure</span>
+                  </div>
                 </div>
               </div>
               <div class="weather-forecast">
-                <div class="forecast-day">
-                  <span>Mon</span>
-                  <i class="fas fa-cloud-sun"></i>
-                  <span>23°</span>
+                <h4>5-Day Forecast</h4>
+                <div class="forecast-days">
+                  <div class="forecast-day">
+                    <span class="day">Mon</span>
+                    <i class="fas fa-cloud-sun"></i>
+                    <span class="temp-range">23° / 18°</span>
+                  </div>
+                  <div class="forecast-day">
+                    <span class="day">Tue</span>
+                    <i class="fas fa-sun"></i>
+                    <span class="temp-range">25° / 19°</span>
+                  </div>
+                  <div class="forecast-day">
+                    <span class="day">Wed</span>
+                    <i class="fas fa-cloud-rain"></i>
+                    <span class="temp-range">22° / 17°</span>
+                  </div>
+                  <div class="forecast-day">
+                    <span class="day">Thu</span>
+                    <i class="fas fa-cloud"></i>
+                    <span class="temp-range">21° / 16°</span>
+                  </div>
+                  <div class="forecast-day">
+                    <span class="day">Fri</span>
+                    <i class="fas fa-cloud-sun"></i>
+                    <span class="temp-range">24° / 18°</span>
+                  </div>
                 </div>
-                <!-- More forecast days... -->
+              </div>
+              <div class="weather-alert">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Perfect weather for outdoor cultural festivals</span>
               </div>
             </div>
           </div>
           
-          <!-- Most Read -->
+          <!-- Most Read - UPDATED -->
           <div class="sidebar-widget most-read">
             <h3 class="widget-title">
               <i class="fas fa-fire"></i>
               Most Read Today
+              <span class="widget-update">Updated 5 min ago</span>
             </h3>
             <div class="read-list">
               <div class="read-item">
                 <span class="read-rank">1</span>
                 <div class="read-content">
-                  <h4>Economic Growth Exceeds Expectations in Q2 2025</h4>
+                  <h4>The 110-Year-Old Midwife Still Delivering Babies</h4>
                   <div class="read-stats">
-                    <span><i class="far fa-eye"></i> 15K reads</span>
-                    <span><i class="fas fa-share"></i> 850</span>
+                    <span><i class="far fa-eye"></i> 42K reads</span>
+                    <span><i class="fas fa-share"></i> 3.2K shares</span>
+                    <span class="read-trend"><i class="fas fa-arrow-up"></i> 380%</span>
                   </div>
                 </div>
               </div>
-              <!-- More read items... -->
+              <div class="read-item">
+                <span class="read-rank">2</span>
+                <div class="read-content">
+                  <h4>Ancient City Found Under Desert Sands</h4>
+                  <div class="read-stats">
+                    <span><i class="far fa-eye"></i> 38K reads</span>
+                    <span><i class="fas fa-share"></i> 2.8K shares</span>
+                  </div>
+                </div>
+              </div>
+              <div class="read-item">
+                <span class="read-rank">3</span>
+                <div class="read-content">
+                  <h4>Teenage Girl Builds Solar-Powered School</h4>
+                  <div class="read-stats">
+                    <span><i class="far fa-eye"></i> 52K reads</span>
+                    <span><i class="fas fa-share"></i> 4.5K shares</span>
+                    <span class="read-trend"><i class="fas fa-fire"></i> Viral</span>
+                  </div>
+                </div>
+              </div>
+              <div class="read-item">
+                <span class="read-rank">4</span>
+                <div class="read-content">
+                  <h4>Man Lives With Lions for 30 Years</h4>
+                  <div class="read-stats">
+                    <span><i class="far fa-eye"></i> 28K reads</span>
+                    <span><i class="fas fa-share"></i> 1.9K shares</span>
+                  </div>
+                </div>
+              </div>
+              <div class="read-item">
+                <span class="read-rank">5</span>
+                <div class="read-content">
+                  <h4>Traditional Healing Recognized by WHO</h4>
+                  <div class="read-stats">
+                    <span><i class="far fa-eye"></i> 35K reads</span>
+                    <span><i class="fas fa-share"></i> 2.4K shares</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="read-analytics">
+              <span class="analytic-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Total Reads Today: 420K</span>
+              </span>
+              <span class="analytic-item">
+                <i class="fas fa-users"></i>
+                <span>Inspired Readers: 65K</span>
+              </span>
             </div>
           </div>
           
           <!-- Advertisement -->
           <div class="sidebar-widget advertisement">
             <div class="ad-content">
-              <span class="ad-label">ADVERTISEMENT</span>
+              <span class="ad-label">SPONSORED CONTENT</span>
               <div class="ad-placeholder">
-                <p>Your Ad Here</p>
-                <small>Reach 500K+ readers daily</small>
-                <button class="btn-advertise">Advertise With Us</button>
+                <div class="ad-logo">
+                  <i class="fas fa-hands-helping"></i>
+                  <span>Community Impact</span>
+                </div>
+                <p>Share Your Inspiring Story With Us</p>
+                <small>Reach 500K+ readers with stories that matter</small>
+                <div class="ad-stats">
+                  <span><i class="fas fa-eye"></i> 98% Engagement</span>
+                  <span><i class="fas fa-click"></i> 4.2% CTR</span>
+                </div>
+                <button class="btn-advertise">
+                  <i class="fas fa-feather-alt"></i>
+                  Submit Story
+                </button>
               </div>
             </div>
           </div>
           
-          <!-- Podcast Player -->
-          <div class="sidebar-widget podcast-widget">
+          <!-- Podcast Player - UPDATED -->
+          <div class="sidebar-widget podcast-player-widget">
             <h3 class="widget-title">
               <i class="fas fa-podcast"></i>
               Now Playing
+              <span class="player-status"><i class="fas fa-circle"></i> LIVE</span>
             </h3>
             <div class="podcast-player">
               <div class="podcast-cover">
@@ -961,61 +1676,121 @@
                 </div>
               </div>
               <div class="podcast-info">
-                <h4>The Future of African Tech</h4>
-                <p>Conversation with leading innovators shaping the continent's digital landscape</p>
+                <div class="podcast-header">
+                  <h4>Voices from the Village</h4>
+                  <button class="btn-subscribe-podcast-small">
+                    <i class="fas fa-plus"></i>
+                  </button>
+                </div>
+                <p>Elders share wisdom, stories, and life lessons from rural communities across Africa</p>
                 <div class="podcast-meta">
-                  <span><i class="far fa-clock"></i> 45 min</span>
-                  <span><i class="fas fa-headphones"></i> 2.4K listens</span>
+                  <span><i class="far fa-clock"></i> Episode 68</span>
+                  <span><i class="fas fa-calendar"></i> Jan 18, 2025</span>
+                </div>
+                <div class="player-progress">
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 45%"></div>
+                  </div>
+                  <div class="progress-time">
+                    <span>20:15</span>
+                    <span>45:00</span>
+                  </div>
                 </div>
                 <div class="player-controls">
                   <button class="player-btn" aria-label="Previous">
                     <i class="fas fa-step-backward"></i>
                   </button>
-                  <button class="player-btn play" aria-label="Play">
+                  <button class="player-btn play" aria-label="Play/Pause">
                     <i class="fas fa-play"></i>
                   </button>
                   <button class="player-btn" aria-label="Next">
                     <i class="fas fa-step-forward"></i>
+                  </button>
+                  <button class="player-btn" aria-label="Volume">
+                    <i class="fas fa-volume-up"></i>
+                  </button>
+                  <button class="player-btn" aria-label="Speed">
+                    <i class="fas fa-tachometer-alt"></i>
+                  </button>
+                </div>
+                <div class="player-actions">
+                  <button class="player-action">
+                    <i class="far fa-heart"></i>
+                    Like
+                  </button>
+                  <button class="player-action">
+                    <i class="fas fa-share"></i>
+                    Share
+                  </button>
+                  <button class="player-action">
+                    <i class="fas fa-download"></i>
+                    Download
                   </button>
                 </div>
               </div>
             </div>
           </div>
           
-          <!-- Newsletter Signup -->
+          <!-- Newsletter Signup - UPDATED -->
           <div class="sidebar-widget newsletter-widget">
             <h3 class="widget-title">
               <i class="fas fa-envelope"></i>
-              Daily Newsletter
+              Story Digest
+              <span class="widget-badge">FREE</span>
             </h3>
-            <p class="newsletter-description">Get breaking news, analysis, and exclusive stories delivered to your inbox every morning.</p>
-            <form class="newsletter-form">
-              <input type="email" placeholder="your.email@example.com" required>
-              <div class="newsletter-options">
-                <label class="checkbox-label">
-                  <input type="checkbox" checked>
-                  <span>Breaking News Alerts</span>
-                </label>
-                <label class="checkbox-label">
-                  <input type="checkbox" checked>
-                  <span>Weekly Digest</span>
-                </label>
-              </div>
-              <button type="submit" class="btn-subscribe-full">
+            <div class="newsletter-content">
+              <div class="newsletter-header">
                 <i class="fas fa-paper-plane"></i>
-                Subscribe Now
-              </button>
-            </form>
-            <p class="privacy-note">
-              <small>By subscribing, you agree to our <a href="#">Privacy Policy</a></small>
-            </p>
+                <h4>Get Inspired Daily</h4>
+              </div>
+              <p class="newsletter-description">Receive uplifting stories, cultural insights, and inspiring profiles delivered to your inbox every morning. Join 350K+ subscribers.</p>
+              <form class="newsletter-form">
+                <div class="input-group">
+                  <input type="email" placeholder="your.email@example.com" required aria-label="Email address">
+                  <button type="submit" class="btn-subscribe-full">
+                    <i class="fas fa-paper-plane"></i>
+                    Subscribe
+                  </button>
+                </div>
+                <div class="newsletter-options">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>Inspiring Stories</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>Cultural Features</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox">
+                    <span>Historical Discoveries</span>
+                  </label>
+                </div>
+              </form>
+              <div class="newsletter-benefits">
+                <span class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>No spam, ever</span>
+                </span>
+                <span class="benefit-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Unsubscribe anytime</span>
+                </span>
+              </div>
+              <p class="privacy-note">
+                <small>By subscribing, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a></small>
+              </p>
+            </div>
           </div>
           
-          <!-- Upcoming Events -->
+          <!-- Upcoming Events - UPDATED -->
           <div class="sidebar-widget events-widget">
             <h3 class="widget-title">
               <i class="fas fa-calendar-alt"></i>
-              Upcoming Events
+              Cultural Events
+              <button class="btn-add-calendar" aria-label="Add to calendar">
+                <i class="fas fa-plus"></i>
+              </button>
             </h3>
             <div class="events-list">
               <div class="event-item">
@@ -1024,43 +1799,118 @@
                   <span class="month">JUL</span>
                 </div>
                 <div class="event-details">
-                  <h4>Africa Tech Summit</h4>
-                  <p>Nairobi Convention Center</p>
-                  <span class="event-time"><i class="far fa-clock"></i> 9:00 AM</span>
+                  <h4>Pan-African Cultural Festival</h4>
+                  <p class="event-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Dakar, Senegal
+                  </p>
+                  <div class="event-meta">
+                    <span class="event-time"><i class="far fa-clock"></i> 9:00 AM - 10:00 PM</span>
+                    <span class="event-type"><i class="fas fa-users"></i> Festival</span>
+                  </div>
+                  <button class="btn-event-rsvp">Learn More</button>
                 </div>
               </div>
-              <!-- More events... -->
+              <div class="event-item">
+                <div class="event-date">
+                  <span class="day">15</span>
+                  <span class="month">AUG</span>
+                </div>
+                <div class="event-details">
+                  <h4>Women Leaders Global Summit</h4>
+                  <p class="event-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Virtual Event
+                  </p>
+                  <div class="event-meta">
+                    <span class="event-time"><i class="far fa-clock"></i> 2:00 PM EAT</span>
+                    <span class="event-type"><i class="fas fa-globe"></i> Online</span>
+                  </div>
+                  <button class="btn-event-rsvp">Register Free</button>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date">
+                  <span class="day">30</span>
+                  <span class="month">SEP</span>
+                </div>
+                <div class="event-details">
+                  <h4>Heritage Preservation Conference</h4>
+                  <p class="event-location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Cairo, Egypt
+                  </p>
+                  <div class="event-meta">
+                    <span class="event-time"><i class="far fa-clock"></i> 10:00 AM</span>
+                    <span class="event-type"><i class="fas fa-landmark"></i> Conference</span>
+                  </div>
+                  <button class="btn-event-rsvp">View Details</button>
+                </div>
+              </div>
             </div>
+            <button class="btn-view-all-events">
+              <i class="fas fa-calendar-week"></i>
+              View All Events
+            </button>
           </div>
           
-          <!-- Quick Poll -->
+          <!-- Quick Poll - UPDATED -->
           <div class="sidebar-widget quick-poll">
             <h3 class="widget-title">
               <i class="fas fa-poll"></i>
-              Quick Poll
+              Community Poll
+              <span class="poll-timer"><i class="fas fa-clock"></i> Ends in 2 days</span>
             </h3>
             <div class="poll-content">
-              <p class="poll-question">Should social media be regulated in Africa?</p>
+              <p class="poll-question">Which inspires you most about African culture?</p>
               <div class="poll-options">
-                <button class="poll-option">Yes</button>
-                <button class="poll-option">No</button>
-                <button class="poll-option">Not Sure</button>
+                <button class="poll-option">
+                  <i class="fas fa-music"></i>
+                  <span>Music & Dance</span>
+                </button>
+                <button class="poll-option">
+                  <i class="fas fa-utensils"></i>
+                  <span>Food Traditions</span>
+                </button>
+                <button class="poll-option">
+                  <i class="fas fa-hands-helping"></i>
+                  <span>Community Spirit</span>
+                </button>
               </div>
               <div class="poll-results">
                 <div class="result-item">
-                  <span class="result-label">Yes</span>
+                  <span class="result-label">Music & Dance</span>
                   <div class="result-bar">
-                    <div class="result-fill" style="width: 65%"></div>
+                    <div class="result-fill" style="width: 45%"></div>
                   </div>
-                  <span class="result-percent">65%</span>
+                  <span class="result-percent">45%</span>
                 </div>
-                <!-- More results... -->
+                <div class="result-item">
+                  <span class="result-label">Food Traditions</span>
+                  <div class="result-bar">
+                    <div class="result-fill" style="width: 35%"></div>
+                  </div>
+                  <span class="result-percent">35%</span>
+                </div>
+                <div class="result-item">
+                  <span class="result-label">Community Spirit</span>
+                  <div class="result-bar">
+                    <div class="result-fill" style="width: 20%"></div>
+                  </div>
+                  <span class="result-percent">20%</span>
+                </div>
               </div>
-              <p class="poll-total"><small>2,458 votes</small></p>
+              <div class="poll-footer">
+                <p class="poll-total"><i class="fas fa-users"></i> 8,542 votes</p>
+                <button class="btn-share-poll">
+                  <i class="fas fa-share"></i>
+                  Share Poll
+                </button>
+              </div>
             </div>
           </div>
           
-          <!-- Back to Top Button -->
+          <!-- Back to Top Button (Sidebar) -->
           <button class="back-to-top-sidebar" id="backToTopSidebar" aria-label="Back to top">
             <i class="fas fa-arrow-up"></i>
             <span>Back to Top</span>
@@ -1077,8 +1927,10 @@
         <div class="footer-grid">
           <!-- Brand Column -->
           <div class="footer-brand">
-            <h3 class="footer-title">HMW Beyond Borders</h3>
-            <p class="footer-tagline">Bringing unseen stories to light with integrity and innovation.</p>
+            <div class="footer-logo">
+              <h3 class="footer-title">HMW Beyond Borders</h3>
+              <p class="footer-tagline">Bringing unseen stories to light with integrity and innovation.</p>
+            </div>
             
             <div class="footer-contact">
               <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
@@ -1086,25 +1938,30 @@
               <p><i class="fas fa-envelope"></i> <a href="mailto:info@hmwbeyondborders.com">info@hmwbeyondborders.com</a></p>
             </div>
             
+            <div class="footer-about">
+              <p>HMW Beyond Borders is an independent storytelling platform dedicated to uncovering and sharing the most inspiring, culturally significant, and historically important stories from Africa and beyond.</p>
+            </div>
+            
             <div class="trust-badges">
-              <span class="trust-badge"><i class="fas fa-shield-alt"></i> Verified News</span>
+              <span class="trust-badge"><i class="fas fa-shield-alt"></i> Verified Stories</span>
               <span class="trust-badge"><i class="fas fa-check-circle"></i> Fact Checked</span>
-              <span class="trust-badge"><i class="fas fa-lock"></i> Secure Connection</span>
+              <span class="trust-badge"><i class="fas fa-heart"></i> Community Driven</span>
+              <span class="trust-badge"><i class="fas fa-award"></i> Award Winning</span>
             </div>
           </div>
 
-          <!-- Quick Links -->
+          <!-- Quick Links - UPDATED -->
           <div class="footer-links">
-            <h4 class="footer-heading">News Categories</h4>
+            <h4 class="footer-heading">Story Categories</h4>
             <ul>
-              <li><a href="#">Politics</a></li>
-              <li><a href="#">Business & Finance</a></li>
-              <li><a href="#">Technology</a></li>
-              <li><a href="#">Science & Health</a></li>
-              <li><a href="#">Sports</a></li>
-              <li><a href="#">Entertainment</a></li>
-              <li><a href="#">Opinion & Editorial</a></li>
-              <li><a href="#">Lifestyle</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Culture & Arts</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> History & Heritage</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Women in Leadership</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Human Interest Stories</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Profiles & Biographies</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Bizarre & Unusual</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Lifestyle & Society</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Inspirational Features</a></li>
             </ul>
           </div>
 
@@ -1112,24 +1969,27 @@
           <div class="footer-links">
             <h4 class="footer-heading">Company</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Advertise</a></li>
-              <li><a href="#">Press Center</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> About Our Mission</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Contact Our Team</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Careers & Opportunities</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Submit a Story</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Storytelling Workshops</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+              <li><a href="#"><i class="fas fa-chevron-right"></i> Cookie Policy</a></li>
             </ul>
           </div>
 
           <!-- Newsletter & Social -->
           <div class="footer-newsletter">
             <h4 class="footer-heading">Stay Connected</h4>
-            <p>Subscribe to our newsletter for daily updates</p>
+            <p class="footer-subtitle">Subscribe for inspiring stories delivered to your inbox</p>
             <form class="footer-subscribe">
-              <input type="email" placeholder="Enter your email" required>
-              <button type="submit" class="btn-footer-subscribe">Subscribe</button>
+              <div class="input-group">
+                <input type="email" placeholder="Enter your email" required aria-label="Email for newsletter">
+                <button type="submit" class="btn-footer-subscribe">Subscribe</button>
+              </div>
+              <p class="footer-note"><small>No spam. Unsubscribe anytime.</small></p>
             </form>
             
             <!-- Mobile Apps -->
@@ -1151,11 +2011,16 @@
                   </div>
                 </a>
               </div>
+              <div class="app-features">
+                <span><i class="fas fa-book-open"></i> Offline Reading</span>
+                <span><i class="fas fa-bell"></i> Story Alerts</span>
+                <span><i class="fas fa-download"></i> Save Stories</span>
+              </div>
             </div>
             
             <!-- Social Links -->
             <div class="footer-social">
-              <h5>Follow Us</h5>
+              <h5>Follow Our Stories</h5>
               <div class="social-icons">
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
@@ -1164,6 +2029,11 @@
                 <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                 <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              </div>
+              <div class="social-stats">
+                <span><i class="fas fa-users"></i> 3.2M Followers</span>
+                <span><i class="fas fa-share-alt"></i> 85K Daily Shares</span>
               </div>
             </div>
           </div>
@@ -1175,13 +2045,32 @@
     <div class="footer-middle">
       <div class="container">
         <div class="footer-partners">
-          <h5>Our Partners</h5>
+          <h5>Our Cultural Partners</h5>
           <div class="partner-logos">
-            <span class="partner-logo">Reuters</span>
-            <span class="partner-logo">AFP</span>
-            <span class="partner-logo">AP</span>
-            <span class="partner-logo">Bloomberg</span>
-            <span class="partner-logo">CNN</span>
+            <span class="partner-logo">
+              <i class="fas fa-landmark"></i>
+              <span>UNESCO</span>
+            </span>
+            <span class="partner-logo">
+              <i class="fas fa-museum"></i>
+              <span>Smithsonian</span>
+            </span>
+            <span class="partner-logo">
+              <i class="fas fa-book"></i>
+              <span>British Library</span>
+            </span>
+            <span class="partner-logo">
+              <i class="fas fa-globe-africa"></i>
+              <span>African Union</span>
+            </span>
+            <span class="partner-logo">
+              <i class="fas fa-hands-helping"></i>
+              <span>Ford Foundation</span>
+            </span>
+            <span class="partner-logo">
+              <i class="fas fa-university"></i>
+              <span>Cultural Heritage</span>
+            </span>
           </div>
         </div>
       </div>
@@ -1194,26 +2083,67 @@
           <!-- Copyright -->
           <div class="copyright">
             <p>&copy; 2025 HMW Beyond Borders. All rights reserved.</p>
-            <p class="small-text">Pioneering journalism from Nairobi, Kenya to the world.</p>
+            <p class="small-text">Documenting humanity's stories from Nairobi, Kenya to the world.</p>
+            <div class="certifications">
+              <span class="certification">
+                <i class="fas fa-check-circle"></i>
+                Ethical Storytelling Certified
+              </span>
+              <span class="certification">
+                <i class="fas fa-shield-alt"></i>
+                Community Reviewed
+              </span>
+            </div>
           </div>
           
           <!-- Additional Links -->
           <div class="footer-legal">
-            <a href="#">Accessibility</a>
-            <a href="#">Ethics Policy</a>
-            <a href="#">Corrections</a>
-            <a href="#">Site Map</a>
-            <a href="#">RSS Feeds</a>
+            <a href="#"><i class="fas fa-universal-access"></i> Accessibility</a>
+            <a href="#"><i class="fas fa-balance-scale"></i> Ethics Policy</a>
+            <a href="#"><i class="fas fa-edit"></i> Corrections</a>
+            <a href="#"><i class="fas fa-sitemap"></i> Site Map</a>
+            <a href="#"><i class="fas fa-rss"></i> RSS Feeds</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Impact Report</a>
           </div>
           
-          <!-- Trust Indicators -->
+          <!-- Trust Indicators - UPDATED -->
           <div class="trust-indicators">
-            <span class="indicator"><i class="fas fa-globe"></i> Global Coverage</span>
-            <span class="indicator"><i class="fas fa-users"></i> 2M+ Monthly Readers</span>
-            <span class="indicator"><i class="fas fa-award"></i> Award Winning</span>
+            <span class="indicator">
+              <i class="fas fa-globe"></i>
+              <span>Stories From: 45 Countries</span>
+            </span>
+            <span class="indicator">
+              <i class="fas fa-users"></i>
+              <span>3M+ Monthly Readers</span>
+            </span>
+            <span class="indicator">
+              <i class="fas fa-award"></i>
+              <span>Award Winning Journalism</span>
+            </span>
           </div>
         </div>
+        
+        <!-- Back to Top -->
+        <div class="footer-back-top">
+          <button id="backToTopFooter" class="btn-back-top">
+            <i class="fas fa-arrow-up"></i>
+            Back to Top
+          </button>
+        </div>
       </div>
+    </div>
+    
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+      <button class="floating-action chat" aria-label="Share story">
+        <i class="fas fa-share-alt"></i>
+      </button>
+      <button class="floating-action donate" aria-label="Support storytelling">
+        <i class="fas fa-heart"></i>
+      </button>
+      <button class="floating-action feedback" aria-label="Submit story idea">
+        <i class="fas fa-lightbulb"></i>
+      </button>
     </div>
   </footer>
   
@@ -1222,13 +2152,16 @@
     <i class="fas fa-arrow-up"></i>
   </button>
   
-  <!-- Mobile Search Overlay -->
-  <div class="mobile-search">
-    <div class="mobile-search-container">
-      <input type="search" placeholder="Search news..." class="mobile-search-input">
-      <button class="mobile-search-close">
+  <!-- Live Chat Widget -->
+  <div class="live-chat-widget">
+    <div class="chat-header">
+      <h4>Story Support</h4>
+      <button class="chat-close" aria-label="Close chat">
         <i class="fas fa-times"></i>
       </button>
+    </div>
+    <div class="chat-body">
+      <!-- Chat messages... -->
     </div>
   </div>
   
@@ -1243,6 +2176,18 @@
   <div class="modal-overlay" id="subscribeModal">
     <div class="modal-content">
       <!-- Subscribe form... -->
+    </div>
+  </div>
+  
+  <!-- Notification Toast -->
+  <div class="notification-toast" id="notificationToast">
+    <div class="toast-content">
+      <i class="fas fa-bell"></i>
+      <div class="toast-message">New inspiring story just published</div>
+      <button class="toast-action">Read Now</button>
+      <button class="toast-close" aria-label="Close notification">
+        <i class="fas fa-times"></i>
+      </button>
     </div>
   </div>
 </body>
