@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/NewsMediaOrganization">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HMW Beyond Borders – Bringing The Unseen to Light</title>
+  <meta name="description" content="Trusted source for breaking news, in-depth analysis, and exclusive stories from around the globe with focus on African narratives.">
+  
+  <!-- SEO Metadata -->
+  <meta itemprop="name" content="HMW Beyond Borders">
+  <meta itemprop="description" content="Global news platform with African perspective">
+  <meta itemprop="image" content="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="HMW Beyond Borders">
+  <meta property="og:description" content="Bringing The Unseen to Light">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hmwbeyondborders.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@HMWBeyondBorders">
+  <meta name="twitter:title" content="HMW Beyond Borders">
+  <meta name="twitter:description" content="Bringing unseen stories to light with integrity and innovation">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+
+<body class="light-mode">
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  
+  <!-- ===== COOKIE CONSENT BANNER ===== -->
+  <div class="cookie-consent" id="cookieConsent">
+    <div class="container">
+      <div class="cookie-content">
+        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. 
+          <a href="/privacy#cookies" class="cookie-learn-more">Learn more</a>
+        </p>
+        <div class="cookie-actions">
+          <button class="btn-cookie accept" id="acceptCookies">Accept All</button>
+          <button class="btn-cookie reject" id="rejectCookies">Reject Non-Essential</button>
+          <button class="cookie-settings" id="cookieSettings">Settings</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== TOP UTILITY BAR ===== -->
+  <div class="top-utility-bar">
+    <div class="container">
+      <div class="utility-content">
+        <!-- Left: Live Clock & Date -->
+        <div class="utility-left">
+          <div class="live-clock" id="liveClock">
+            <i class="far fa-clock"></i>
+            <span id="currentTime">Loading...</span>
+          </div>
+          <div class="date-display" id="currentDate">
+            Loading...
+          </div>
+          <div class="edition-badge">
+            <i class="fas fa-globe-africa"></i>
+            <span>Africa Edition</span>
+          </div>
+        </div>
+        
+        <!-- Center: Trending Topics -->
+        <div class="utility-center">
+          <div class="trending-topics">
+            <span class="trending-label"><i class="fas fa-fire"></i> TRENDING:</span>
+            <div class="topics-scroller">
+              <a href="#" class="topic-tag">#AfricaTech2025</a>
+              <a href="#" class="topic-tag">#ClimateAction</a>
+              <a href="#" class="topic-tag">#AIHealthcare</a>
+              <a href="#" class="topic-tag">#DigitalCurrency</a>
+              <a href="#" class="topic-tag">#GreenEnergy</a>
+              <a href="#" class="topic-tag">#StartupAfrica</a>
+              <a href="#" class="topic-tag">#WomenInTech</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right: Weather & User Actions -->
+        <div class="utility-right">
+          <!-- Weather Widget -->
+          <div class="weather-widget" id="weatherWidget">
+            <i class="fas fa-cloud-sun"></i>
+            <div class="weather-info">
+              <span class="weather-temp">24°C</span>
+              <span class="weather-location">Nairobi</span>
+            </div>
+          </div>
+          
+          <!-- Language Selector -->
+          <div class="language-selector">
+            <select class="language-dropdown" aria-label="Select language">
+              <option value="en">English</option>
+              <option value="sw">Kiswahili</option>
+              <option value="fr">Français</option>
+              <option value="ar">العربية</option>
+            </select>
+          </div>
+          
+          <!-- Subscribe/Login/Account -->
+          <div class="user-actions">
+            <button class="btn-subscribe">
+              <i class="fas fa-newspaper"></i>
+              <span class="action-text">Subscribe</span>
+            </button>
+            <button class="btn-login">
+              <i class="fas fa-user"></i>
+              <span class="action-text">Login</span>
+            </button>
+            <div class="account-dropdown">
+              <button class="btn-account" aria-label="Account menu">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-menu">
+                <a href="#"><i class="fas fa-user-circle"></i> My Account</a>
+                <a href="#"><i class="fas fa-bookmark"></i> Saved Articles</a>
+                <a href="#"><i class="fas fa-history"></i> Reading History</a>
+                <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+                <div class="dropdown-divider"></div>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+                <div class="dropdown-divider"></div>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== BREAKING NEWS TICKER ===== -->
+  <div class="breaking-news-ticker" role="alert" aria-live="polite">
+    <div class="container">
+      <span class="breaking-label"><i class="fas fa-bolt"></i> BREAKING:</span>
+      <div class="ticker-content">
+        <span>New international cybersecurity pact signed in Geneva to combat rising global threats</span>
+        <span class="ticker-separator">•</span>
+        <span>Tech Breakthrough: Kenyan startup unveils revolutionary AI education platform</span>
+        <span class="ticker-separator">•</span>
+        <span>Sports Exclusive: Harambee Stars prepare for crucial World Cup qualifier match!</span>
+        <span class="ticker-separator">•</span>
+        <span>Health Alert: New research on endemic disease prevention shows promising results</span>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== SOCIAL MEDIA BAR ===== -->
+  <div class="social-media-bar">
+    <div class="container">
+      <div class="social-links">
+        <a href="https://wa.me/254715844002" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://facebook.com/HMWBeyondBorders" target="_blank" class="social-icon facebook" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://linkedin.com/company/HMWBeyondBorders" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://x.com/HMWBeyondBorders" target="_blank" class="social-icon twitter" aria-label="X / Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="https://instagram.com/HMWBeyondBorders" target="_blank" class="social-icon instagram" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com/HMWBeyondBorders" target="_blank" class="social-icon youtube" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://t.me/HMWBeyondBorders" target="_blank" class="social-icon telegram" aria-label="Telegram">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+        <a href="https://www.tiktok.com/@HMWBeyondBorders" target="_blank" class="social-icon tiktok" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== MAIN NAVIGATION BAR ===== -->
+  <header class="main-navigation">
+    <div class="container">
+      <nav class="navbar" aria-label="Main navigation">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <div class="logo-container">
+            <div class="logo-text">
+              <h1 class="site-title">HMW Beyond Borders</h1>
+              <p class="site-tagline">Bringing The Unseen to Light</p>
+            </div>
+            <div class="logo-badge">
+              <span class="badge-live"><i class="fas fa-circle"></i> LIVE</span>
+              <span class="badge-trusted"><i class="fas fa-shield-alt"></i> Verified</span>
+            </div>
+          </div>
+        </a>
+        
+        <!-- Primary Navigation Categories -->
+        <div class="nav-categories">
+          <ul class="category-menu">
+            <li class="category-item">
+              <a href="#" class="category-link">
+                <i class="fas fa-landmark"></i>
+                <span>Politics</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#" class="category-link">
+                <i class="fas fa-chart-line"></i>
+                <span>Business</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#" class="category-link">
+                <i class="fas fa-laptop-code"></i>
+                <span>Technology</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#" class="category-link">
+                <i class="fas fa-flask"></i>
+                <span>Science</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#" class="category-link">
+                <i class="fas fa-futbol"></i>
+                <span>Sports</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#" class="category-link">
+                <i class="fas fa-film"></i>
+                <span>Entertainment</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#" class="category-link">
+                <i class="fas fa-edit"></i>
+                <span>Opinion</span>
+              </a>
+            </li>
+            <li class="category-item dropdown">
+              <a href="#" class="category-link">
+                <span>More</span>
+                <i class="fas fa-chevron-down"></i>
+              </a>
+              <!-- Mega Menu -->
+              <div class="mega-menu">
+                <div class="mega-grid">
+                  <div class="mega-column">
+                    <h4><i class="fas fa-utensils"></i> Lifestyle</h4>
+                    <a href="#"><i class="fas fa-utensils"></i> Food & Dining</a>
+                    <a href="#"><i class="fas fa-plane"></i> Travel</a>
+                    <a href="#"><i class="fas fa-car"></i> Auto</a>
+                    <a href="#"><i class="fas fa-home"></i> Real Estate</a>
+                    <a href="#"><i class="fas fa-heart"></i> Health & Wellness</a>
+                  </div>
+                  <div class="mega-column">
+                    <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+                    <a href="#"><i class="fas fa-graduation-cap"></i> Learning</a>
+                    <a href="#"><i class="fas fa-book"></i> Research</a>
+                    <a href="#"><i class="fas fa-university"></i> Institutions</a>
+                    <a href="#"><i class="fas fa-laptop"></i> E-Learning</a>
+                  </div>
+                  <div class="mega-column">
+                    <h4><i class="fas fa-chart-pie"></i> Special Reports</h4>
+                    <a href="#"><i class="fas fa-chart-pie"></i> Data Journalism</a>
+                    <a href="#"><i class="fas fa-camera"></i> Photo Stories</a>
+                    <a href="#"><i class="fas fa-podcast"></i> Podcasts</a>
+                    <a href="#"><i class="fas fa-video"></i> Documentaries</a>
+                  </div>
+                  <div class="mega-column">
+                    <h4><i class="fas fa-newspaper"></i> Regional</h4>
+                    <a href="#"><i class="fas fa-globe-africa"></i> East Africa</a>
+                    <a href="#"><i class="fas fa-globe-africa"></i> West Africa</a>
+                    <a href="#"><i class="fas fa-globe-africa"></i> Southern Africa</a>
+                    <a href="#"><i class="fas fa-globe-africa"></i> North Africa</a>
+                  </div>
+                </div>
+                <div class="mega-footer">
+                  <a href="#" class="mega-view-all"><i class="fas fa-list"></i> View All Categories</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+          <!-- Search Button -->
+          <button class="nav-action search-toggle" aria-label="Open search">
+            <i class="fas fa-search"></i>
+          </button>
+          
+          <!-- Notification Bell -->
+          <div class="notification-bell">
+            <i class="fas fa-bell"></i>
+            <span class="notification-badge">3</span>
+          </div>
+          
+          <!-- Theme Toggle -->
+          <button class="nav-action theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+          
+          <!-- Hamburger Menu (Mobile) -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- ===== SECONDARY CONTEXTUAL BAR ===== -->
+  <div class="contextual-bar">
+    <div class="container">
+      <div class="contextual-content">
+        <!-- Live Scoreboards -->
+        <div class="live-scores">
+          <div class="scores-header">
+            <i class="fas fa-futbol"></i>
+            <span>Live Scores</span>
+          </div>
+          <div class="scores-container">
+            <div class="sport-match active">
+              <span class="sport-icon"><i class="fas fa-futbol"></i></span>
+              <span class="team">KEN</span>
+              <span class="score">2 - 1</span>
+              <span class="team">UGA</span>
+              <span class="match-status live">LIVE 75'</span>
+            </div>
+            <div class="sport-match">
+              <span class="sport-icon"><i class="fas fa-basketball-ball"></i></span>
+              <span class="team">NGR</span>
+              <span class="score">85 - 78</span>
+              <span class="team">RSA</span>
+              <span class="match-status">Q4</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stock Market Index -->
+        <div class="stock-index">
+          <div class="stocks-header">
+            <i class="fas fa-chart-line"></i>
+            <span>Markets</span>
+          </div>
+          <div class="stocks-container">
+            <div class="index-item">
+              <span class="index-name">NSE</span>
+              <span class="index-value">1,842.15</span>
+              <span class="index-change positive">+1.2%</span>
+            </div>
+            <div class="index-item">
+              <span class="index-name">JSE</span>
+              <span class="index-value">73,450.80</span>
+              <span class="index-change positive">+0.8%</span>
+            </div>
+            <div class="index-item">
+              <span class="index-name">NGX</span>
+              <span class="index-value">52,308.25</span>
+              <span class="index-change negative">-0.3%</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Live Poll -->
+        <div class="live-poll">
+          <div class="poll-header">
+            <i class="fas fa-poll"></i>
+            <span>Daily Poll</span>
+          </div>
+          <div class="poll-question">
+            <span>Is AI regulation necessary in Africa?</span>
+            <div class="poll-options">
+              <button class="poll-option">Yes</button>
+              <button class="poll-option">No</button>
+              <button class="poll-option">Unsure</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Local News Toggle -->
+        <div class="local-toggle">
+          <div class="toggle-header">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Edition</span>
+          </div>
+          <div class="toggle-buttons">
+            <button class="local-switch active" data-region="nairobi">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Nairobi</span>
+            </button>
+            <button class="local-switch" data-region="national">
+              <i class="fas fa-globe-africa"></i>
+              <span>National</span>
+            </button>
+            <button class="local-switch" data-region="global">
+              <i class="fas fa-globe"></i>
+              <span>Global</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Newsletter Signup Mini -->
+        <div class="newsletter-mini">
+          <div class="newsletter-header">
+            <i class="fas fa-paper-plane"></i>
+            <span>Newsletter</span>
+          </div>
+          <div class="newsletter-form-mini">
+            <input type="email" placeholder="Email for updates" class="newsletter-input">
+            <button class="newsletter-button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== SEARCH OVERLAY ===== -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <button class="search-close" aria-label="Close search">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="search-content">
+        <h2 class="search-title">Search HMW Beyond Borders</h2>
+        <p class="search-subtitle">Find news, articles, videos, and more</p>
+        
+        <div class="search-input-group">
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <input type="search" class="search-input-full" placeholder="Search for news, topics, authors..." autofocus>
+          <button class="search-button-full">
+            <i class="fas fa-search"></i>
+            Search
+          </button>
+        </div>
+        
+        <div class="search-suggestions">
+          <h4>Trending Searches</h4>
+          <div class="suggestion-tags">
+            <a href="#">Artificial Intelligence Africa</a>
+            <a href="#">Climate Change Solutions</a>
+            <a href="#">Elections 2025</a>
+            <a href="#">Startup Funding Africa</a>
+            <a href="#">Healthcare Innovation</a>
+            <a href="#">Renewable Energy Kenya</a>
+            <a href="#">Digital Economy Growth</a>
+          </div>
+        </div>
+        
+        <div class="recent-searches">
+          <h4>Recent Searches</h4>
+          <div class="recent-list">
+            <a href="#"><i class="fas fa-history"></i> Blockchain technology</a>
+            <a href="#"><i class="fas fa-history"></i> Women empowerment</a>
+            <a href="#"><i class="fas fa-history"></i> Sustainable agriculture</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ===== MOBILE BOTTOM NAVIGATION ===== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+    <a href="#" class="nav-item active">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-fire"></i>
+      <span>Trending</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-play-circle"></i>
+      <span>Video</span>
+      <span class="nav-badge">LIVE</span>
+    </a>
+    <a href="#" class="nav-item search-mobile">
+      <i class="fas fa-search"></i>
+      <span>Search</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fas fa-user"></i>
+      <span>Profile</span>
+    </a>
+  </nav>
+  
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      
+      <!-- Breadcrumb Navigation -->
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Technology</a></li>
+          <li class="breadcrumb-item"><a href="#">Artificial Intelligence</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Healthcare AI</li>
+        </ol>
+      </nav>
+      
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="hero-grid">
+          <!-- Main Hero Article -->
+          <article class="hero-main">
+            <div class="hero-image-container">
+              <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                   alt="AI technology in healthcare" 
+                   class="hero-image"
+                   loading="eager">
+              <div class="hero-badge">EXCLUSIVE</div>
+              <div class="hero-actions">
+                <button class="hero-action" aria-label="Share article">
+                  <i class="fas fa-share-alt"></i>
+                </button>
+                <button class="hero-action" aria-label="Save article">
+                  <i class="far fa-bookmark"></i>
+                </button>
+                <button class="hero-action" aria-label="Play video">
+                  <i class="fas fa-play"></i>
+                </button>
+              </div>
+            </div>
+            <div class="hero-content">
+              <div class="category-label">Technology / Healthcare</div>
+              <h2 class="hero-title">AI Revolution: Transforming East African Healthcare</h2>
+              <p class="hero-excerpt">Groundbreaking developments in artificial intelligence are revolutionizing healthcare from diagnostics to personalized treatment plans across the region, promising to save millions of lives and billions in costs.</p>
+              <div class="hero-meta">
+                <div class="author">
+                  <img src="https://images.unsplash.com/photo-1494790108755-2616b786d49f?ixlib=rb-4.0.3&auto=format&fit=crop&w=50&q=80" 
+                       alt="Dr. Anya Sharma" 
+                       class="author-avatar">
+                  <div class="author-info">
+                    <span class="author-name">Dr. Anya Sharma</span>
+                    <span class="author-title">Lead Health Innovations Correspondent</span>
+                    <span class="article-date"><i class="far fa-clock"></i> 2 hours ago</span>
+                  </div>
+                </div>
+                <div class="article-stats">
+                  <span><i class="far fa-eye"></i> 2.4K</span>
+                  <span><i class="far fa-comment"></i> 42</span>
+                  <span><i class="fas fa-share"></i> 156</span>
+                  <span><i class="far fa-clock"></i> 8 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          
+          <!-- Side Hero Articles -->
+          <div class="hero-side">
+            <article class="side-article featured">
+              <div class="side-image">
+                <img src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                     alt="Climate summit" 
+                     loading="lazy">
+                <div class="side-badge">BREAKING</div>
+              </div>
+              <div class="side-content">
+                <div class="category-label">Environment</div>
+                <h3>Climate Summit Reaches Historic Agreement on Carbon Reduction</h3>
+                <p class="side-excerpt">Global leaders commit to ambitious 2030 targets at Nairobi conference.</p>
+                <div class="article-meta">
+                  <span><i class="far fa-clock"></i> 45 min ago</span>
+                  <span><i class="far fa-eye"></i> 1.2K</span>
+                </div>
+              </div>
+            </article>
+            
+            <article class="side-article">
+              <div class="side-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                     alt="Stock market" 
+                     loading="lazy">
+              </div>
+              <div class="side-content">
+                <div class="category-label">Business</div>
+                <h3>Stock Markets Surge on Strong Tech Earnings Report</h3>
+                <p class="side-excerpt">African tech stocks lead gains as sector shows robust growth.</p>
+                <div class="article-meta">
+                  <span><i class="far fa-clock"></i> 1 hour ago</span>
+                  <span><i class="far fa-eye"></i> 980</span>
+                </div>
+              </div>
+            </article>
+            
+            <article class="side-article">
+              <div class="side-image">
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                     alt="Startup funding" 
+                     loading="lazy">
+              </div>
+              <div class="side-content">
+                <div class="category-label">Startups</div>
+                <h3>Kenyan Fintech Raises $50M Series B Funding</h3>
+                <p class="side-excerpt">Local startup plans to expand across East Africa with new investment.</p>
+                <div class="article-meta">
+                  <span><i class="far fa-clock"></i> 3 hours ago</span>
+                  <span><i class="far fa-eye"></i> 1.5K</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Content Grid with Sidebars -->
+      <div class="content-layout">
+        <!-- Left Sidebar -->
+        <aside class="left-sidebar">
+          <!-- Editor's Picks -->
+          <div class="sidebar-widget editors-picks">
+            <h3 class="widget-title">
+              <i class="fas fa-star"></i>
+              Editor's Picks
+            </h3>
+            <div class="picks-list">
+              <article class="pick-item">
+                <div class="pick-rank">1</div>
+                <div class="pick-content">
+                  <h4>Investigative Report: The Future of African Cities</h4>
+                  <div class="pick-meta">
+                    <span>Urban Planning</span>
+                    <span><i class="far fa-clock"></i> 15 min</span>
+                  </div>
+                </div>
+              </article>
+              <!-- More picks... -->
+            </div>
+          </div>
+          
+          <!-- Social Media Follow -->
+          <div class="sidebar-widget social-widget">
+            <h3 class="widget-title">Follow Us</h3>
+            <div class="social-grid">
+              <a href="#" class="social-item whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+                <small>Join Channel</small>
+              </a>
+              <a href="#" class="social-item twitter">
+                <i class="fab fa-x-twitter"></i>
+                <span>Twitter</span>
+                <small>189K followers</small>
+              </a>
+              <a href="#" class="social-item facebook">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+                <small>245K followers</small>
+              </a>
+              <a href="#" class="social-item instagram">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+                <small>156K followers</small>
+              </a>
+              <a href="#" class="social-item youtube">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+                <small>89K subscribers</small>
+              </a>
+              <a href="#" class="social-item linkedin">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+                <small>45K followers</small>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Trending Now -->
+          <div class="sidebar-widget trending-widget">
+            <h3 class="widget-title">
+              <i class="fas fa-chart-line"></i>
+              Trending Now
+            </h3>
+            <div class="trending-list">
+              <div class="trending-item">
+                <span class="trending-rank">1</span>
+                <div class="trending-content">
+                  <h4>New AI Regulations Proposed Across Africa</h4>
+                  <div class="trending-stats">
+                    <span><i class="far fa-eye"></i> 45K views</span>
+                    <span><i class="fas fa-share"></i> 1.2K shares</span>
+                  </div>
+                </div>
+              </div>
+              <!-- More trending items... -->
+            </div>
+          </div>
+          
+          <!-- Live Updates -->
+          <div class="sidebar-widget live-widget">
+            <h3 class="widget-title">
+              <i class="fas fa-broadcast-tower"></i>
+              Live Updates
+            </h3>
+            <div class="live-feed">
+              <div class="update-item">
+                <span class="update-time">14:30</span>
+                <span class="update-text">Breaking: New trade agreement signed between African nations</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">14:15</span>
+                <span class="update-text">Stock markets opening higher across Africa</span>
+              </div>
+              <div class="update-item">
+                <span class="update-time">14:00</span>
+                <span class="update-text">Tech conference keynote speech begins in Lagos</span>
+              </div>
+            </div>
+            <button class="view-all-updates">
+              <i class="fas fa-external-link-alt"></i>
+              View All Updates
+            </button>
+          </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <div class="main-content-area">
+          
+          <!-- Categories Quick Access -->
+          <section class="quick-categories">
+            <div class="categories-grid">
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <h3>Politics</h3>
+                <p>Latest political developments</p>
+                <span class="category-count">24 new</span>
+              </a>
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Business</h3>
+                <p>Markets & finance</p>
+                <span class="category-count">18 new</span>
+              </a>
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>Technology</h3>
+                <p>Innovation & startups</p>
+                <span class="category-count">32 new</span>
+              </a>
+              <a href="#" class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-futbol"></i>
+                </div>
+                <h3>Sports</h3>
+                <p>Live scores & analysis</p>
+                <span class="category-count">15 new</span>
+              </a>
+            </div>
+          </section>
+          
+          <!-- Latest News Section -->
+          <section class="latest-news">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-newspaper"></i>
+                Latest News
+              </h2>
+              <div class="section-actions">
+                <button class="btn-view-all">View All <i class="fas fa-arrow-right"></i></button>
+                <div class="news-filter">
+                  <select class="filter-select">
+                    <option>All Categories</option>
+                    <option>Politics</option>
+                    <option>Business</option>
+                    <option>Technology</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="news-grid">
+              <article class="news-card">
+                <div class="news-image">
+                  <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                       alt="Renewable energy" 
+                       loading="lazy">
+                  <div class="news-badge">EXCLUSIVE</div>
+                </div>
+                <div class="news-content">
+                  <div class="news-category">Energy</div>
+                  <h3 class="news-title">Solar Power Expansion Across Africa to Reach 10 Million Homes</h3>
+                  <p class="news-excerpt">New investments in solar infrastructure promise to bring electricity to millions, with Kenya leading the renewable energy revolution.</p>
+                  <div class="news-meta">
+                    <div class="author-info">
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=30&q=80" 
+                           alt="Energy Desk" 
+                           class="author-thumb">
+                      <span class="author">Energy Desk</span>
+                    </div>
+                    <div class="meta-right">
+                      <span class="time"><i class="far fa-clock"></i> 3 hours ago</span>
+                      <span class="read-time">5 min read</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              
+              <!-- More news cards... -->
+            </div>
+          </section>
+          
+          <!-- Video Section -->
+          <section class="video-section">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-play-circle"></i>
+                Featured Videos
+              </h2>
+              <a href="#" class="view-all">View All Videos <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="video-grid">
+              <!-- Video cards... -->
+            </div>
+          </section>
+          
+          <!-- Podcast Section -->
+          <section class="podcast-section">
+            <div class="section-header">
+              <h2 class="section-title">
+                <i class="fas fa-podcast"></i>
+                Latest Podcasts
+              </h2>
+            </div>
+            <div class="podcast-grid">
+              <!-- Podcast cards... -->
+            </div>
+          </section>
+        </div>
+        
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+          <!-- Weather Widget Detailed -->
+          <div class="sidebar-widget weather-detailed">
+            <h3 class="widget-title">Weather</h3>
+            <div class="weather-info">
+              <div class="current-weather">
+                <i class="fas fa-sun"></i>
+                <div class="temp-display">
+                  <span class="temp">24°C</span>
+                  <span class="condition">Sunny</span>
+                  <span class="location">Nairobi, KE</span>
+                </div>
+              </div>
+              <div class="weather-details">
+                <div class="detail-item">
+                  <i class="fas fa-wind"></i>
+                  <span>Wind: 12 km/h</span>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-tint"></i>
+                  <span>Humidity: 65%</span>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-eye"></i>
+                  <span>Visibility: 10 km</span>
+                </div>
+              </div>
+              <div class="weather-forecast">
+                <div class="forecast-day">
+                  <span>Mon</span>
+                  <i class="fas fa-cloud-sun"></i>
+                  <span>23°</span>
+                </div>
+                <!-- More forecast days... -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Most Read -->
+          <div class="sidebar-widget most-read">
+            <h3 class="widget-title">
+              <i class="fas fa-fire"></i>
+              Most Read Today
+            </h3>
+            <div class="read-list">
+              <div class="read-item">
+                <span class="read-rank">1</span>
+                <div class="read-content">
+                  <h4>Economic Growth Exceeds Expectations in Q2 2025</h4>
+                  <div class="read-stats">
+                    <span><i class="far fa-eye"></i> 15K reads</span>
+                    <span><i class="fas fa-share"></i> 850</span>
+                  </div>
+                </div>
+              </div>
+              <!-- More read items... -->
+            </div>
+          </div>
+          
+          <!-- Advertisement -->
+          <div class="sidebar-widget advertisement">
+            <div class="ad-content">
+              <span class="ad-label">ADVERTISEMENT</span>
+              <div class="ad-placeholder">
+                <p>Your Ad Here</p>
+                <small>Reach 500K+ readers daily</small>
+                <button class="btn-advertise">Advertise With Us</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Podcast Player -->
+          <div class="sidebar-widget podcast-widget">
+            <h3 class="widget-title">
+              <i class="fas fa-podcast"></i>
+              Now Playing
+            </h3>
+            <div class="podcast-player">
+              <div class="podcast-cover">
+                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
+                     alt="Podcast cover" 
+                     loading="lazy">
+                <div class="play-overlay">
+                  <i class="fas fa-play"></i>
+                </div>
+              </div>
+              <div class="podcast-info">
+                <h4>The Future of African Tech</h4>
+                <p>Conversation with leading innovators shaping the continent's digital landscape</p>
+                <div class="podcast-meta">
+                  <span><i class="far fa-clock"></i> 45 min</span>
+                  <span><i class="fas fa-headphones"></i> 2.4K listens</span>
+                </div>
+                <div class="player-controls">
+                  <button class="player-btn" aria-label="Previous">
+                    <i class="fas fa-step-backward"></i>
+                  </button>
+                  <button class="player-btn play" aria-label="Play">
+                    <i class="fas fa-play"></i>
+                  </button>
+                  <button class="player-btn" aria-label="Next">
+                    <i class="fas fa-step-forward"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Newsletter Signup -->
+          <div class="sidebar-widget newsletter-widget">
+            <h3 class="widget-title">
+              <i class="fas fa-envelope"></i>
+              Daily Newsletter
+            </h3>
+            <p class="newsletter-description">Get breaking news, analysis, and exclusive stories delivered to your inbox every morning.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="your.email@example.com" required>
+              <div class="newsletter-options">
+                <label class="checkbox-label">
+                  <input type="checkbox" checked>
+                  <span>Breaking News Alerts</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" checked>
+                  <span>Weekly Digest</span>
+                </label>
+              </div>
+              <button type="submit" class="btn-subscribe-full">
+                <i class="fas fa-paper-plane"></i>
+                Subscribe Now
+              </button>
+            </form>
+            <p class="privacy-note">
+              <small>By subscribing, you agree to our <a href="#">Privacy Policy</a></small>
+            </p>
+          </div>
+          
+          <!-- Upcoming Events -->
+          <div class="sidebar-widget events-widget">
+            <h3 class="widget-title">
+              <i class="fas fa-calendar-alt"></i>
+              Upcoming Events
+            </h3>
+            <div class="events-list">
+              <div class="event-item">
+                <div class="event-date">
+                  <span class="day">25</span>
+                  <span class="month">JUL</span>
+                </div>
+                <div class="event-details">
+                  <h4>Africa Tech Summit</h4>
+                  <p>Nairobi Convention Center</p>
+                  <span class="event-time"><i class="far fa-clock"></i> 9:00 AM</span>
+                </div>
+              </div>
+              <!-- More events... -->
+            </div>
+          </div>
+          
+          <!-- Quick Poll -->
+          <div class="sidebar-widget quick-poll">
+            <h3 class="widget-title">
+              <i class="fas fa-poll"></i>
+              Quick Poll
+            </h3>
+            <div class="poll-content">
+              <p class="poll-question">Should social media be regulated in Africa?</p>
+              <div class="poll-options">
+                <button class="poll-option">Yes</button>
+                <button class="poll-option">No</button>
+                <button class="poll-option">Not Sure</button>
+              </div>
+              <div class="poll-results">
+                <div class="result-item">
+                  <span class="result-label">Yes</span>
+                  <div class="result-bar">
+                    <div class="result-fill" style="width: 65%"></div>
+                  </div>
+                  <span class="result-percent">65%</span>
+                </div>
+                <!-- More results... -->
+              </div>
+              <p class="poll-total"><small>2,458 votes</small></p>
+            </div>
+          </div>
+          
+          <!-- Back to Top Button -->
+          <button class="back-to-top-sidebar" id="backToTopSidebar" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+            <span>Back to Top</span>
+          </button>
+        </aside>
+      </div>
+    </div>
+  </main>
+  
+  <!-- ===== FOOTER ===== -->
+  <footer class="main-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand Column -->
+          <div class="footer-brand">
+            <h3 class="footer-title">HMW Beyond Borders</h3>
+            <p class="footer-tagline">Bringing unseen stories to light with integrity and innovation.</p>
+            
+            <div class="footer-contact">
+              <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+              <p><i class="fas fa-phone"></i> <a href="tel:+254715844002">+254 715 844 002</a></p>
+              <p><i class="fas fa-envelope"></i> <a href="mailto:info@hmwbeyondborders.com">info@hmwbeyondborders.com</a></p>
+            </div>
+            
+            <div class="trust-badges">
+              <span class="trust-badge"><i class="fas fa-shield-alt"></i> Verified News</span>
+              <span class="trust-badge"><i class="fas fa-check-circle"></i> Fact Checked</span>
+              <span class="trust-badge"><i class="fas fa-lock"></i> Secure Connection</span>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4 class="footer-heading">News Categories</h4>
+            <ul>
+              <li><a href="#">Politics</a></li>
+              <li><a href="#">Business & Finance</a></li>
+              <li><a href="#">Technology</a></li>
+              <li><a href="#">Science & Health</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#">Entertainment</a></li>
+              <li><a href="#">Opinion & Editorial</a></li>
+              <li><a href="#">Lifestyle</a></li>
+            </ul>
+          </div>
+
+          <!-- Company Links -->
+          <div class="footer-links">
+            <h4 class="footer-heading">Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Advertise</a></li>
+              <li><a href="#">Press Center</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter & Social -->
+          <div class="footer-newsletter">
+            <h4 class="footer-heading">Stay Connected</h4>
+            <p>Subscribe to our newsletter for daily updates</p>
+            <form class="footer-subscribe">
+              <input type="email" placeholder="Enter your email" required>
+              <button type="submit" class="btn-footer-subscribe">Subscribe</button>
+            </form>
+            
+            <!-- Mobile Apps -->
+            <div class="mobile-apps">
+              <h5>Get Our App</h5>
+              <div class="app-badges">
+                <a href="#" class="app-badge">
+                  <i class="fab fa-apple"></i>
+                  <div class="app-text">
+                    <span>Download on the</span>
+                    <strong>App Store</strong>
+                  </div>
+                </a>
+                <a href="#" class="app-badge">
+                  <i class="fab fa-google-play"></i>
+                  <div class="app-text">
+                    <span>Get it on</span>
+                    <strong>Google Play</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="footer-social">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Middle -->
+    <div class="footer-middle">
+      <div class="container">
+        <div class="footer-partners">
+          <h5>Our Partners</h5>
+          <div class="partner-logos">
+            <span class="partner-logo">Reuters</span>
+            <span class="partner-logo">AFP</span>
+            <span class="partner-logo">AP</span>
+            <span class="partner-logo">Bloomberg</span>
+            <span class="partner-logo">CNN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-content">
+          <!-- Copyright -->
+          <div class="copyright">
+            <p>&copy; 2025 HMW Beyond Borders. All rights reserved.</p>
+            <p class="small-text">Pioneering journalism from Nairobi, Kenya to the world.</p>
+          </div>
+          
+          <!-- Additional Links -->
+          <div class="footer-legal">
+            <a href="#">Accessibility</a>
+            <a href="#">Ethics Policy</a>
+            <a href="#">Corrections</a>
+            <a href="#">Site Map</a>
+            <a href="#">RSS Feeds</a>
+          </div>
+          
+          <!-- Trust Indicators -->
+          <div class="trust-indicators">
+            <span class="indicator"><i class="fas fa-globe"></i> Global Coverage</span>
+            <span class="indicator"><i class="fas fa-users"></i> 2M+ Monthly Readers</span>
+            <span class="indicator"><i class="fas fa-award"></i> Award Winning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <!-- Mobile Search Overlay -->
+  <div class="mobile-search">
+    <div class="mobile-search-container">
+      <input type="search" placeholder="Search news..." class="mobile-search-input">
+      <button class="mobile-search-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Login Modal (Hidden) -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal-content">
+      <!-- Login form... -->
+    </div>
+  </div>
+  
+  <!-- Subscribe Modal (Hidden) -->
+  <div class="modal-overlay" id="subscribeModal">
+    <div class="modal-content">
+      <!-- Subscribe form... -->
+    </div>
+  </div>
+</body>
+</html>
