@@ -344,7 +344,7 @@ button {
 
 /* ===== BREAKING NEWS TICKER ===== */
 .breaking-news-ticker {
-    background-color: var(--danger-color);
+    background-color: #1c63cc;
     color: white;
     padding: 12px 0;
     font-weight: 600;
@@ -5322,3 +5322,4 @@ button {
         padding-bottom: calc(70px + env(safe-area-inset-bottom)) !important;
     }
 }
+
